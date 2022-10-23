@@ -1,4 +1,5 @@
 #include "RationalMatrix.h"
+#include <algorithm>
 
 void RationalMatrix::extend(int newSize) {
 	for (int i = 0; i < this->rows; i++)
