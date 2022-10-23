@@ -41,12 +41,10 @@ RationalMatrix RationalMatrix::multRec(RationalMatrix* b, int ia, int ja, int ib
 	RationalMatrix p6 = s7.multRec(&s8, 0, 0, 0, 0, size);
 	RationalMatrix p7 = s9.multRec(&s10, 0, 0, 0, 0, size);
 
-	RationalMatrix tmp = p6.diff(&p2);
-	RationalMatrix c11 = (p5.sum(&p4)).sum(&tmp);
+	RationalMatrix c11 = (p5.sum(&p4)).sum(&(p6.diff(&p2)));
 	RationalMatrix c12 = p1.sum(&p2);
 	RationalMatrix c21 = p3.sum(&p4);
-	tmp = p3.sum(&p7);
-	RationalMatrix c22 = (p5.sum(&p1)).diff(&tmp);
+	RationalMatrix c22 = (p5.sum(&p1)).diff(&(p3.sum(&p7)));
 
 	for (int i = 0; i < size; i++)
 	{
@@ -73,7 +71,7 @@ RationalMatrix RationalMatrix::StrassensMult(RationalMatrix b) {
 	int colA = this->cols;
 	int colB = b.cols;
 
-	RationalMatrix res;
+	RationalMatrix res = RationalMatrix({ {} });
 	if (colA != rowB) return res;
 	
 	int maxSize = std::max({rowA, rowB, colB});
@@ -83,7 +81,7 @@ RationalMatrix RationalMatrix::StrassensMult(RationalMatrix b) {
 	this->extend(newSize);
 	b.extend(newSize);
 
-	res = this->multRec(&b, 0, 0, 0, 0, newSize);
+	RationalMatrix res = this->multRec(&b, 0, 0, 0, 0, newSize);
 	this->shrink(rowA, colA);
 	b.shrink(rowB, colB);
 	res.shrink(rowA, colB);
