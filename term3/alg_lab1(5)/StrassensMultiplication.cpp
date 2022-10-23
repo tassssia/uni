@@ -1,4 +1,3 @@
-#pragma once
 #include "RationalMatrix.h"
 
 void RationalMatrix::extend(int newSize) {
@@ -67,11 +66,11 @@ void RationalMatrix::shrink(int height, int width) {
 	this->cols = width;
 }
 
-RationalMatrix RationalMatrix::StrassensMult(RationalMatrix b) {
+RationalMatrix RationalMatrix::StrassensMult(RationalMatrix* b) {
 	int rowA = this->rows;
-	int rowB = b.rows;
+	int rowB = b->rows;
 	int colA = this->cols;
-	int colB = b.cols;
+	int colB = b->cols;
 
 	RationalMatrix res;
 	if (colA != rowB) return res;
@@ -81,11 +80,11 @@ RationalMatrix RationalMatrix::StrassensMult(RationalMatrix b) {
 	while (newSize < maxSize) newSize *= 2;
 
 	this->extend(newSize);
-	b.extend(newSize);
+	b->extend(newSize);
 
-	res = this->multRec(&b, 0, 0, 0, 0, newSize);
+	res = this->multRec(b, 0, 0, 0, 0, newSize);
 	this->shrink(rowA, colA);
-	b.shrink(rowB, colB);
+	b->shrink(rowB, colB);
 	res.shrink(rowA, colB);
 
 	return res;

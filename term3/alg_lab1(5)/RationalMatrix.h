@@ -78,7 +78,7 @@ public:
 		return this->diff(b, 0, 0, 0, 0, this->rows, this->cols);
 	}
 
-	RationalMatrix StrassensMult(RationalMatrix b);
+	RationalMatrix StrassensMult(RationalMatrix* b);
 
 	RationalMatrix(std::vector<std::vector<fract>> matrix = { {} }) {
 		content = matrix;
