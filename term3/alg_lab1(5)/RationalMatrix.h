@@ -78,11 +78,56 @@ public:
 		return this->diff(b, 0, 0, 0, 0, this->rows, this->cols);
 	}
 
+	RationalMatrix mult(const RationalMatrix* b) {
+		RationalMatrix res;
+		if (this->cols != b->rows) return res;
+
+		std::vector<fract> tmp = {};
+		fract t;
+		for (int i = 0; i < this->rows; i++)
+		{
+			for (int j = 0; j < b->cols; j++)
+			{
+				for (int k = 0; k < this->cols; k++)
+					t = t.sum(this->content[i][k].mult(b->content[k][j]));
+				tmp.push_back(t);
+				t = fract(0, 1);
+			}
+			res.content.push_back(tmp);
+			tmp = {};
+		}
+
+		res.rows = res.content.size();
+		res.cols = res.content[0].size();
+
+		return res;
+	}
+
 	RationalMatrix StrassensMult(RationalMatrix* b);
 
 	RationalMatrix(std::vector<std::vector<fract>> matrix = { {} }) {
 		content = matrix;
 		rows = matrix.size();
 		cols = matrix[0].size();
+	}
+	// matrix with random rational values from -10 to 10
+	RationalMatrix(int height, int width, unsigned seed) {
+		rows = height;
+		cols = width;
+		content = { {} };
+
+		srand(seed);
+		fract t;
+		std::vector<fract> tmp = {};
+		for (int i = 0; i < height; i++)
+		{
+			for (int j = 0; j < width; j++)
+			{
+				rand() % 2 ? t = fract(rand() % 11, 1 + rand() % 10) : t = fract(-1 * (rand() % 11), 1 + rand() % 10);
+				tmp.push_back(t);
+			}
+			content.push_back(tmp);
+			tmp = {};
+		}
 	}
 };
