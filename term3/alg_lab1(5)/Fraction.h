@@ -39,7 +39,9 @@ public:
 		res.simplify();
 		return res;
 	}
-
+	bool isEqual(fract a) {
+		return (this->num == a.num && this->denom == a.denom);
+	}
 
 	fract(int numerator = 0, int denominator = 1) {
 		if (denominator > 0) {

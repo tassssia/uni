@@ -103,6 +103,16 @@ public:
 		return res;
 	}
 
+	bool isEqual(const RationalMatrix* b) {
+		if (this->cols != b->cols || this->rows != b->rows) return 0;
+
+		for (int i = 0; i < this->rows; i++)
+			for (int j = 0; j < this->cols; j++)
+				if (!this->content[i][j].isEqual(b->content[i][j])) return 0;
+
+		return 1;
+	}
+
 	RationalMatrix StrassensMult(RationalMatrix* b);
 
 	RationalMatrix(std::vector<std::vector<fract>> matrix = { {} }) {
