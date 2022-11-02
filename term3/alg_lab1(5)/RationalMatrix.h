@@ -10,7 +10,6 @@ class RationalMatrix {
 
 	// for Strassen's multiplication
 	void extend(int maxSize);
-	RationalMatrix multMin(const RationalMatrix* b, int ia, int ja, int ib, int jb);
 	RationalMatrix multRec(RationalMatrix* b, int ia, int ja, int ib, int jb, int size);
 	void shrink(int height, int width);
 
@@ -80,19 +79,20 @@ public:
 		return this->diff(b, 0, 0, 0, 0, this->rows, this->cols);
 	}
 
-	RationalMatrix mult(const RationalMatrix* b) {
+	// setting starting positions and final size manually
+	RationalMatrix mult(const RationalMatrix* b, int ia, int ja, int ib, int jb, int heightRes, int equalSide, int widthRes) {
 		RationalMatrix res;
-		if (this->cols != b->rows) return res;
+		if (heightRes + ia > this->rows || equalSide + ib > b->rows || equalSide + ja > this->cols || widthRes + jb > b->cols) return res;
 
 		std::vector<fract> tmp = {};
 		fract t;
-		for (int i = 0; i < this->rows; i++)
+		for (int i = 0; i < heightRes; i++)
 		{
-			for (int j = 0; j < b->cols; j++)
+			for (int j = 0; j < widthRes; j++)
 			{
 				t = fract(0, 1);
-				for (int k = 0; k < this->cols; k++)
-					t = t.sum(this->content[i][k].mult(b->content[k][j]));
+				for (int k = 0; k < equalSide; k++)
+					t = t.sum(this->content[ia + i][ja + k].mult(b->content[ib + k][jb + j]));
 				tmp.push_back(t);
 			}
 			res.content.push_back(tmp);
@@ -100,10 +100,16 @@ public:
 		}
 
 		res.content.erase(res.content.begin());
-		res.rows = res.content.size();
-		res.cols = res.content[0].size();
+		res.rows = heightRes;
+		res.cols = widthRes;
 
 		return res;
+	}
+	// taking the whole matrix
+	RationalMatrix mult(const RationalMatrix* b) {
+		RationalMatrix res;
+		if (this->cols != b->rows) return res;
+		return this->mult(b, 0, 0, 0, 0, this->rows, this->cols, b->cols);
 	}
 
 	bool isEqual(const RationalMatrix* b) {
