@@ -40,6 +40,7 @@ public:
 			tmp = {};
 		}
 
+		res.content.erase(res.content.begin());
 		res.rows = height;
 		res.cols = width;
 
@@ -66,6 +67,7 @@ public:
 			tmp = {};
 		}
 
+		res.content.erase(res.content.begin());
 		res.rows = height;
 		res.cols = width;
 
@@ -88,15 +90,16 @@ public:
 		{
 			for (int j = 0; j < b->cols; j++)
 			{
+				t = fract(0, 1);
 				for (int k = 0; k < this->cols; k++)
 					t = t.sum(this->content[i][k].mult(b->content[k][j]));
 				tmp.push_back(t);
-				t = fract(0, 1);
 			}
 			res.content.push_back(tmp);
 			tmp = {};
 		}
 
+		res.content.erase(res.content.begin());
 		res.rows = res.content.size();
 		res.cols = res.content[0].size();
 
