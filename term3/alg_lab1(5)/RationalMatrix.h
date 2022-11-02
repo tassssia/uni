@@ -142,5 +142,6 @@ public:
 			content.push_back(tmp);
 			tmp = {};
 		}
+		content.erase(content.begin());
 	}
 };
