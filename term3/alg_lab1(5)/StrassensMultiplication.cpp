@@ -10,16 +10,8 @@ void RationalMatrix::extend(int newSize) {
 	this->content.resize(newSize, tmp);
 	this->rows = newSize;
 }
-RationalMatrix RationalMatrix::multMin(const RationalMatrix* b, int ia, int ja, int ib, int jb) {
-	RationalMatrix res = RationalMatrix( {
-		{(this->content[ia][ja].mult(b->content[ib][jb])).sum(this->content[ia][ja + 1].mult(b->content[ib + 1][jb])),
-		 (this->content[ia][ja].mult(b->content[ib][jb + 1])).sum(this->content[ia][ja + 1].mult(b->content[ib + 1][jb + 1]))},
-		{(this->content[ia + 1][ja].mult(b->content[ib][jb])).sum(this->content[ia + 1][ja + 1].mult(b->content[ib + 1][jb])),
-		 (this->content[ia + 1][ja].mult(b->content[ib][jb + 1])).sum(this->content[ia + 1][ja + 1].mult(b->content[ib + 1][jb + 1]))} });
-	return res;
-}
 RationalMatrix RationalMatrix::multRec(RationalMatrix* b, int ia, int ja, int ib, int jb, int size) {
-	if (size == 2) return this->multMin(b, ia, ja, ib, jb);
+	if (size == 2) return this->mult(b, ia, ja, ib, jb, size, size, size);
 
 	size /= 2;
 	RationalMatrix s1 = b->diff(b, ib, jb + size, ib + size, jb + size, size, size);
