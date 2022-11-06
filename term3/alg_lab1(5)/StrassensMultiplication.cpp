@@ -11,7 +11,7 @@ void RationalMatrix::extend(int newSize) {
 	this->rows = newSize;
 }
 RationalMatrix RationalMatrix::multRec(RationalMatrix* b, int ia, int ja, int ib, int jb, int size) {
-	if (size == 2) return this->mult(b, ia, ja, ib, jb, size, size, size);
+	if (size <= 2) return this->mult(b, ia, ja, ib, jb, size, size, size);
 
 	size /= 2;
 	RationalMatrix s1 = b->diff(b, ib, jb + size, ib + size, jb + size, size, size);
