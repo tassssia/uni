@@ -142,7 +142,9 @@ public:
 		{
 			for (int j = 0; j < width; j++)
 			{
-				rand() % 2 ? t = fract(rand() % 11, 1 + rand() % 10) : t = fract(-1 * (rand() % 11), 1 + rand() % 10);
+				rand() % 2 ? 
+					t = fract(rand() % 11, (long long)1 + rand() % 2) : 
+					t = fract((long long)-1 * (rand() % 11), (long long)1 + rand() % 10);
 				tmp.push_back(t);
 			}
 			content.push_back(tmp);
