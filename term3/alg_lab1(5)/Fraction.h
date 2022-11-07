@@ -3,8 +3,8 @@
 #include <iostream>
 
 class fract {
-	int num;
-	int denom;
+	long long num;
+	long long denom;
 
 public:
 	void print() {
@@ -30,7 +30,7 @@ public:
 		return (this->num == a.num && this->denom == a.denom);
 	}
 
-	fract(int numerator = 0, int denominator = 1) {
+	fract(long long numerator = 0, long long denominator = 1) {
 		if (denominator > 0) {
 			num = numerator;
 			denom = denominator;
@@ -40,7 +40,7 @@ public:
 			while (numerator && denominator)
 				numerator > denominator ? numerator = numerator % denominator : denominator = denominator % numerator;
 
-			int gcd = numerator + denominator;
+			long long gcd = numerator + denominator;
 			num = num / gcd;
 			denom = denom / gcd;
 		}
@@ -54,7 +54,7 @@ public:
 			while (numerator && denominator)
 				numerator > denominator ? numerator = numerator % denominator : denominator = denominator % numerator;
 
-			int gcd = numerator + denominator;
+			long long gcd = numerator + denominator;
 			num = num / gcd;
 			denom = denom / gcd;
 		}
