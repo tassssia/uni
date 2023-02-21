@@ -26,6 +26,9 @@ public:
 		fract res = fract(this->num * a.num, this->denom * a.denom);
 		return res;
 	}
+	fract div(fract a) {
+		return this->mult(fract(a.denom, a.num));
+	}
 	bool isEqual(fract a) {
 		return (this->num == a.num && this->denom == a.denom);
 	}
