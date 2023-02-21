@@ -18,6 +18,10 @@ class RationalMatrix {
 	RationalMatrix transposeMatrix();
 
 	// for Gauss-Jordan elimination (inversion)
+	RationalMatrix add_identity_matrix();
+	bool gaussian_jordan();
+	RationalMatrix remove_identity_matrix();
+	void exchange(int row1, int row2);
 
 	// for multiple linear regression
 	RationalMatrix add_const_column(int position, fract val);
@@ -169,7 +173,7 @@ public:
 
 	RationalMatrix minorInverse();
 
-
+	RationalMatrix GaussianJordanInverse();
 
 	// multiple linear regression
 	RationalMatrix get_mlr_coeff(RationalMatrix y);
