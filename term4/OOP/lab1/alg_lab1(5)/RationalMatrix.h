@@ -13,6 +13,19 @@ class RationalMatrix {
 	RationalMatrix multRec(RationalMatrix* b, int ia, int ja, int ib, int jb, int size);
 	void shrink(int height, int width);
 
+	// for minors method inversion
+	RationalMatrix getMinor(int indRow, int indCol);
+	RationalMatrix transposeMatrix();
+
+	// for Gauss-Jordan elimination (inversion)
+
+	// for multiple linear regression
+	RationalMatrix add_const_column(int position, fract val);
+	RationalMatrix extract_col(int start_col, int end_col);
+	fract rss(RationalMatrix x, RationalMatrix y, RationalMatrix coeff);
+	fract tss(RationalMatrix x, RationalMatrix y);
+	fract coeff_of_determination(RationalMatrix x, RationalMatrix y, RationalMatrix coeff);
+
 public:
 	void print() {
 		for (int i = 0; i < this->rows; i++)
@@ -112,6 +125,35 @@ public:
 		return this->mult(b, 0, 0, 0, 0, this->rows, this->cols, b->cols);
 	}
 
+	fract get_matrix_det()
+	{
+		fract temp;   // temporary variable for storing det
+		fract k(1, 1);      // power of minor
+
+		if (this->rows != this->cols) {
+			std::cout << "Matrix is not square" << std::endl;
+			return fract(INT_MAX, 1);
+		}
+		if (this->rows < 1) {
+			std::cout << "Matrix size is incorrect" << std::endl;
+			return fract(INT_MAX, 1);
+		}
+
+		if (this->rows == 1)
+			temp = this->content[0][0];
+		else if (this->rows == 2)
+			temp = (this->content[0][0].mult(this->content[1][1])).diff(this->content[1][0].mult(this->content[0][1]));
+		else {
+			for (int i = 0; i < this->rows; i++) {
+				RationalMatrix temp_matrix = this->getMinor(0, i);
+				temp = temp.sum(k.mult(this->content[0][i].mult(temp_matrix.get_matrix_det())));
+
+				k = k.mult(fract(-1, 1));
+			}
+		}
+		return temp;
+	}
+
 	bool isEqual(const RationalMatrix* b) {
 		if (this->cols != b->cols || this->rows != b->rows) return 0;
 
@@ -122,14 +164,24 @@ public:
 		return 1;
 	}
 
+
 	RationalMatrix StrassensMult(RationalMatrix* b);
+
+	RationalMatrix minorInverse();
+
+
+
+	// multiple linear regression
+	RationalMatrix get_mlr_coeff(RationalMatrix y);
+	void print_regression_model();
+
 
 	RationalMatrix(std::vector<std::vector<fract>> matrix = { {} }) {
 		content = matrix;
 		rows = matrix.size();
 		cols = matrix[0].size();
 	}
-	// matrix with random rational values from -10 to 10
+	// matrix with random rational values from -5 to 5
 	RationalMatrix(int height, int width, unsigned seed) {
 		rows = height;
 		cols = width;
@@ -142,15 +194,26 @@ public:
 		{
 			for (int j = 0; j < width; j++)
 			{
-				/*rand() % 2 ? 
-					t = fract(rand() % 3, (long long)1 + rand() % 2) : 
-					t = fract((long long)-1 * (rand() % 11), (long long)1 + rand() % 10);*/
-				t = fract(rand() % 5 - 2, rand() % 2 + 1);
+				t = fract(rand() % 11 - 5, rand() % 2 + 1);
 				tmp.push_back(t);
 			}
 			content.push_back(tmp);
 			tmp = {};
 		}
 		content.erase(content.begin());
+	}
+
+	int get_rows()
+	{
+		return this->rows;
+	}
+	int get_cols()
+	{
+		return this->cols;
+	}
+	fract get(int i, int j)
+	{
+		if (i < this->rows && j < this->cols)
+			return this->content[i][j];
 	}
 };
