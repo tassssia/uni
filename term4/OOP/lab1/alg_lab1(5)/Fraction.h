@@ -32,6 +32,11 @@ public:
 	bool isEqual(fract a) {
 		return (this->num == a.num && this->denom == a.denom);
 	}
+	bool isNull() {
+		if (this->num == 0) return 1;
+		else return 0;
+	}
+
 
 	fract(long long numerator = 0, long long denominator = 1) {
 		if (denominator > 0) {
