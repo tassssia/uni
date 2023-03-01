@@ -9,16 +9,17 @@ class Menu
 	RationalMatrix generateRandom();
 
 	int saveMatrix(RationalMatrix* a);
+
+	void det(RationalMatrix* a);
+	void inverse(RationalMatrix* a);
+
+	void equalityCheck(RationalMatrix* a, RationalMatrix* b);
+	void add(RationalMatrix* a, RationalMatrix* b);
+	void substruct(RationalMatrix* a, RationalMatrix* b);
+	void multiply(RationalMatrix* a, RationalMatrix* b);
+	void linearRegression(RationalMatrix* a, RationalMatrix* b);
+
 public:
 	void printMenu();
-	
-	void det();
-	void inverse();
-
-	void equalityCheck();
-	void add();
-	void substruct();
-	void multiply();
-	void linearRegression();
 };
 
