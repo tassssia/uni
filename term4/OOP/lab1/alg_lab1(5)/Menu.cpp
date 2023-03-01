@@ -59,6 +59,7 @@ RationalMatrix Menu::upload() {
 	fopen_s(&fp, name, "rb");
 	if (!fp) {
 		cout << "File not found\n";
+		fclose(fp);
 		return RationalMatrix({});
 	}
 
@@ -77,6 +78,7 @@ RationalMatrix Menu::upload() {
 			matrix[i].push_back(t);
 		}
 	}
+	fclose(fp);
 	return RationalMatrix(matrix);
 }
 
@@ -90,5 +92,42 @@ RationalMatrix Menu::generateRandom() {
 	return RationalMatrix(m, n, seed);
 }
 
+int Menu::saveMatrix(RationalMatrix* a) {
+	char name[100];
+	char c;
+	cout << "enter file name: ";
+	cin >> name;
 
+	if (name == "") return 1;
+	FILE* fp;
+	fopen_s(&fp, name, "rb");
+	bool unique = !((bool)fp);
+	fclose(fp);
 
+	if (!unique) {
+		cout << "the name is not unique. rewrite previous? [y/n] ";
+		cin >> c;
+		if (c == 'y') {
+			remove(name);
+		}
+		else return this->saveMatrix(a);
+	}
+
+	fopen_s(&fp, name, "wb");
+	int m = a->get_cols(), n = a->get_rows();
+	fract t;
+
+	fwrite(&m, sizeof(int), 1, fp);
+	fwrite(&n, sizeof(int), 1, fp);
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			t = a->get(i, j);
+			fwrite(&t, sizeof(fract), 1, fp);
+		}
+	}
+
+	fclose(fp);
+	return 0;
+}

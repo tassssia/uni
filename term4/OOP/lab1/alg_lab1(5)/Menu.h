@@ -7,7 +7,8 @@ class Menu
 	RationalMatrix enterManually();
 	RationalMatrix upload();
 	RationalMatrix generateRandom();
-	void saveMatrix();
+
+	int saveMatrix(RationalMatrix* a);
 public:
 	void printMenu();
 	
