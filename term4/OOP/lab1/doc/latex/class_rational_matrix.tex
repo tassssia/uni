@@ -1,0 +1,689 @@
+\hypertarget{class_rational_matrix}{}\doxysection{Rational\+Matrix Class Reference}
+\label{class_rational_matrix}\index{RationalMatrix@{RationalMatrix}}
+
+
+Class of matrixes filled with rational numbers.  
+
+
+
+
+{\ttfamily \#include $<$Rational\+Matrix.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rational_matrix_a55740482ae8701db86e9d0b601f808f0}\label{class_rational_matrix_a55740482ae8701db86e9d0b601f808f0}} 
+void {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em prints the whole matrix \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a2b5950271a607b1f77b33d6a42871345}{sum}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b, int ia, int ja, int ib, int jb, int height, int width)
+\begin{DoxyCompactList}\small\item\em Adds two matrixes or patrs of them with set start positions and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a6f3297bd69c11a80ff421905cf8d759a}{sum}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Adds two matrixes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_ae247415d0d72a3fa0b8cc50574d10188}{diff}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b, int ia, int ja, int ib, int jb, int height, int width)
+\begin{DoxyCompactList}\small\item\em Substructs two matrixes (this -\/ b) or patrs of them with set start positions and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_acb129c9e2ba04e3f7563d754204a14fd}{diff}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Substructs two matrixes (this -\/ b). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a548bc0549d4d8cbb5b56e73e724383d4}{mult}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b, int ia, int ja, int ib, int jb, int height\+Res, int equal\+Side, int width\+Res)
+\begin{DoxyCompactList}\small\item\em Multiplies two matrixes (this $\ast$ b) or patrs of them with set start positions and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_afbb329be303ffeb9d4d92a20fa63f6ce}{mult}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Multiplies two matrixes (this $\ast$ b). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{class_rational_matrix_af11ce0dfcf0ef5f3953aed9781a59683}{get\+\_\+matrix\+\_\+det}} ()
+\begin{DoxyCompactList}\small\item\em Calculating the determinant of the martix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_rational_matrix_ad5a7feb41359467ddcdc08d4932fb95f}{is\+Equal}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Checks if matrixes are equal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a5037132004aab65e761f359baffaa54a}{Strassens\+Mult}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Multiplies two matrixes (this $\ast$ b) using Strassen\textquotesingle{}s method. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_ac2841e46a7cafd9a3ad70b456f0f0215}{minor\+Inverse}} ()
+\begin{DoxyCompactList}\small\item\em Inverts matrix using minors method. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_ac906d1a53417682c9da71b92c02e91a4}{Gaussian\+Jordan\+Inverse}} ()
+\begin{DoxyCompactList}\small\item\em Inverts matrix using Gauss-\/\+Jordan elimination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a24d820000e82c8c43aec5a246727346f}{get\+\_\+mlr\+\_\+coeff}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} y)
+\begin{DoxyCompactList}\small\item\em Builds linear regression according to given labels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_rational_matrix_ab07281224818cf3cb42326ec727a290f}\label{class_rational_matrix_ab07281224818cf3cb42326ec727a290f}} 
+void {\bfseries print\+\_\+regression\+\_\+model} ()
+\begin{DoxyCompactList}\small\item\em Prints the regression mobel from this matrix of coefficients. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix_a318824df9a580423808b91de0a76f4a3}{Rational\+Matrix}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classfract}{fract}} $>$ $>$ matrix=\{ \{\} \})
+\begin{DoxyCompactList}\small\item\em Constructing a matrix as an odject from vector of vectors of fractions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix_ae9b9ff8e45cfc8eb9243ee5e6be3e0ce}{Rational\+Matrix}} (int height, int width, unsigned seed)
+\begin{DoxyCompactList}\small\item\em Constructing a matrix as an odject, filled with pseudo random rational numbers from -\/5 to 5, with fixed size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_rational_matrix_ae281ecefe1053d3d447d9fe614d71918}{get\+\_\+rows}} ()
+\begin{DoxyCompactList}\small\item\em Gets number of rows in the matrix. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_rational_matrix_afaa8584a698b54e741a3bc91beb37aeb}{get\+\_\+cols}} ()
+\begin{DoxyCompactList}\small\item\em Gets number of columns in the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{class_rational_matrix_ab7f4f4d3c3f02dfb6b7203516acfc0c0}{get}} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Gets element of the matrix in specific coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rational_matrix_a026c3594c6c595ffb4a1dc953a3a56ea}{extend}} (int max\+Size)
+\begin{DoxyCompactList}\small\item\em Extends matrix to have size 2$^\wedge$n$\ast$2$^\wedge$n (n is integer) for Strassen\textquotesingle{}s multiplication with fractions 0/1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a881f3684c3077875cfc53125d3ec8e96}{mult\+Rec}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b, int ia, int ja, int ib, int jb, int size)
+\begin{DoxyCompactList}\small\item\em Recursive multiplying part of Strassen\textquotesingle{}s multiplication algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rational_matrix_a2e3200ad30066da121b9b0741d29f5d4}{shrink}} (int height, int width)
+\begin{DoxyCompactList}\small\item\em Shrinks matrix to its original size, oposite to \mbox{\hyperlink{class_rational_matrix_a026c3594c6c595ffb4a1dc953a3a56ea}{extend(int max\+Size)}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a1195adff64249efe07cd88d9eb4c9609}{get\+Minor}} (int ind\+Row, int ind\+Col)
+\begin{DoxyCompactList}\small\item\em Creates minor matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a915ae4780cfff3b954e580ed118a8be8}{transpose\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Transposes matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a95ed69b8c284d2dabd025ca1be9865a2}{add\+\_\+identity\+\_\+matrix}} ()
+\begin{DoxyCompactList}\small\item\em Adds matrix filled with 0s and 1s on the main diagonal on the right of given matrix. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_rational_matrix_a7e74e0db92ab7f05b415552342537098}{gaussian\+\_\+jordan}} ()
+\begin{DoxyCompactList}\small\item\em Performs Gaussian-\/\+Jordan transformation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_af08b63fc02d91bb7bd1133982811e126}{remove\+\_\+identity\+\_\+matrix}} ()
+\begin{DoxyCompactList}\small\item\em Removes the left half of the columns, which will contain an identity matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rational_matrix_a2df9ff2d02010c85ef7565772f6daab5}{exchange}} (int row1, int row2)
+\begin{DoxyCompactList}\small\item\em Swaps rows with given indexes in the given matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_aa58d005cd70a8752d123364970c2d060}{add\+\_\+const\+\_\+column}} (int position, \mbox{\hyperlink{classfract}{fract}} val)
+\begin{DoxyCompactList}\small\item\em Adds column of fractions with a specified value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a068d0dd9251c6d9f87c917229751ca07}{extract\+\_\+col}} (int start\+\_\+col, int end\+\_\+col)
+\begin{DoxyCompactList}\small\item\em Rewriting columns from one with a specified start index (included) to one with final index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{class_rational_matrix_a5c8e0a5a532a228432e9ad2f69a635a2}{rss}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} x, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} y, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} coeff)
+\begin{DoxyCompactList}\small\item\em Calculats the residual sum of squares. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{class_rational_matrix_a25df4ca40d754989389113767c11e71b}{tss}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} x, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} y)
+\begin{DoxyCompactList}\small\item\em Calculats the total sum of squares. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{class_rational_matrix_a0cdf3054edfa3e7843d31ee5b9ed92f8}{coeff\+\_\+of\+\_\+determination}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} x, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} y, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} coeff)
+\begin{DoxyCompactList}\small\item\em Calculates the coefficient of determination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rational_matrix_a38cbc225eaa21b57a91008c0785782e8}\label{class_rational_matrix_a38cbc225eaa21b57a91008c0785782e8}} 
+int {\bfseries rows}
+\item 
+\mbox{\Hypertarget{class_rational_matrix_ada5de8282e02205b1aeb1badb7592eb9}\label{class_rational_matrix_ada5de8282e02205b1aeb1badb7592eb9}} 
+int {\bfseries cols}
+\item 
+\mbox{\Hypertarget{class_rational_matrix_a0f77735fd43c6b38ff6b21aa03b6d5cc}\label{class_rational_matrix_a0f77735fd43c6b38ff6b21aa03b6d5cc}} 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classfract}{fract}} $>$ $>$ {\bfseries content}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class of matrixes filled with rational numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows in matrix\\
+\hline
+{\em cols} & number of columns in matrix\\
+\hline
+{\em content} & the actual matrix\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rational_matrix_a318824df9a580423808b91de0a76f4a3}\label{class_rational_matrix_a318824df9a580423808b91de0a76f4a3}} 
+\index{RationalMatrix@{RationalMatrix}!RationalMatrix@{RationalMatrix}}
+\index{RationalMatrix@{RationalMatrix}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{RationalMatrix()}{RationalMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Rational\+Matrix\+::\+Rational\+Matrix (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classfract}{fract}} $>$ $>$}]{matrix = {\ttfamily \{~\{\}~\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructing a matrix as an odject from vector of vectors of fractions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & the actual content of the matrix\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rational_matrix_ae9b9ff8e45cfc8eb9243ee5e6be3e0ce}\label{class_rational_matrix_ae9b9ff8e45cfc8eb9243ee5e6be3e0ce}} 
+\index{RationalMatrix@{RationalMatrix}!RationalMatrix@{RationalMatrix}}
+\index{RationalMatrix@{RationalMatrix}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{RationalMatrix()}{RationalMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rational\+Matrix\+::\+Rational\+Matrix (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{width,  }\item[{unsigned}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructing a matrix as an odject, filled with pseudo random rational numbers from -\/5 to 5, with fixed size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & height of the generated matrix\\
+\hline
+{\em width} & width of the generated matrix\\
+\hline
+{\em seed} & a seed for generating a content of the matrix\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rational_matrix_aa58d005cd70a8752d123364970c2d060}\label{class_rational_matrix_aa58d005cd70a8752d123364970c2d060}} 
+\index{RationalMatrix@{RationalMatrix}!add\_const\_column@{add\_const\_column}}
+\index{add\_const\_column@{add\_const\_column}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{add\_const\_column()}{add\_const\_column()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::add\+\_\+const\+\_\+column (\begin{DoxyParamCaption}\item[{int}]{position,  }\item[{\mbox{\hyperlink{classfract}{fract}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds column of fractions with a specified value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & index which column will be added after\\
+\hline
+{\em val} & value to be added\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix with an added column or an empty matrix, if position was out of range
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a95ed69b8c284d2dabd025ca1be9865a2}\label{class_rational_matrix_a95ed69b8c284d2dabd025ca1be9865a2}} 
+\index{RationalMatrix@{RationalMatrix}!add\_identity\_matrix@{add\_identity\_matrix}}
+\index{add\_identity\_matrix@{add\_identity\_matrix}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{add\_identity\_matrix()}{add\_identity\_matrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::add\+\_\+identity\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adds matrix filled with 0s and 1s on the main diagonal on the right of given matrix. 
+
+\begin{DoxyReturn}{Returns}
+(given m. $\vert$ identity m.)
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a0cdf3054edfa3e7843d31ee5b9ed92f8}\label{class_rational_matrix_a0cdf3054edfa3e7843d31ee5b9ed92f8}} 
+\index{RationalMatrix@{RationalMatrix}!coeff\_of\_determination@{coeff\_of\_determination}}
+\index{coeff\_of\_determination@{coeff\_of\_determination}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{coeff\_of\_determination()}{coeff\_of\_determination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} Rational\+Matrix\+::coeff\+\_\+of\+\_\+determination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{x,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{y,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{coeff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates the coefficient of determination. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em coeff} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coefficient of determination
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_acb129c9e2ba04e3f7563d754204a14fd}\label{class_rational_matrix_acb129c9e2ba04e3f7563d754204a14fd}} 
+\index{RationalMatrix@{RationalMatrix}!diff@{diff}}
+\index{diff@{diff}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{diff()}{diff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::diff (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Substructs two matrixes (this -\/ b). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to substuct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this matrix minus parameter or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_ae247415d0d72a3fa0b8cc50574d10188}\label{class_rational_matrix_ae247415d0d72a3fa0b8cc50574d10188}} 
+\index{RationalMatrix@{RationalMatrix}!diff@{diff}}
+\index{diff@{diff}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{diff()}{diff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::diff (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b,  }\item[{int}]{ia,  }\item[{int}]{ja,  }\item[{int}]{ib,  }\item[{int}]{jb,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Substructs two matrixes (this -\/ b) or patrs of them with set start positions and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to substruct\\
+\hline
+{\em ia} & starting row index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ja} & starting column index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ib} & starting row index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em jb} & starting column index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em height} & number of rows in the part of matrix which will be taken\\
+\hline
+{\em width} & number of colunms in the part of matrix which will be taken\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this matrix minus parameter or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a2df9ff2d02010c85ef7565772f6daab5}\label{class_rational_matrix_a2df9ff2d02010c85ef7565772f6daab5}} 
+\index{RationalMatrix@{RationalMatrix}!exchange@{exchange}}
+\index{exchange@{exchange}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{exchange()}{exchange()}}
+{\footnotesize\ttfamily void Rational\+Matrix\+::exchange (\begin{DoxyParamCaption}\item[{int}]{row1,  }\item[{int}]{row2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Swaps rows with given indexes in the given matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row1} & index of the first row to be swapped\\
+\hline
+{\em row2} & index of the second row to be swapped\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rational_matrix_a026c3594c6c595ffb4a1dc953a3a56ea}\label{class_rational_matrix_a026c3594c6c595ffb4a1dc953a3a56ea}} 
+\index{RationalMatrix@{RationalMatrix}!extend@{extend}}
+\index{extend@{extend}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily void Rational\+Matrix\+::extend (\begin{DoxyParamCaption}\item[{int}]{max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extends matrix to have size 2$^\wedge$n$\ast$2$^\wedge$n (n is integer) for Strassen\textquotesingle{}s multiplication with fractions 0/1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Size} & final width and height of the matrix\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rational_matrix_a068d0dd9251c6d9f87c917229751ca07}\label{class_rational_matrix_a068d0dd9251c6d9f87c917229751ca07}} 
+\index{RationalMatrix@{RationalMatrix}!extract\_col@{extract\_col}}
+\index{extract\_col@{extract\_col}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{extract\_col()}{extract\_col()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::extract\+\_\+col (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+col,  }\item[{int}]{end\+\_\+col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rewriting columns from one with a specified start index (included) to one with final index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+col} & index to start with\\
+\hline
+{\em end\+\_\+col} & index of the first column which won\textquotesingle{}t be rewrited\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rewriten columns of the given matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a7e74e0db92ab7f05b415552342537098}\label{class_rational_matrix_a7e74e0db92ab7f05b415552342537098}} 
+\index{RationalMatrix@{RationalMatrix}!gaussian\_jordan@{gaussian\_jordan}}
+\index{gaussian\_jordan@{gaussian\_jordan}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{gaussian\_jordan()}{gaussian\_jordan()}}
+{\footnotesize\ttfamily bool Rational\+Matrix\+::gaussian\+\_\+jordan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs Gaussian-\/\+Jordan transformation. 
+
+\begin{DoxyReturn}{Returns}
+true if a matrix was transformed successfully, false otherwise
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_ac906d1a53417682c9da71b92c02e91a4}\label{class_rational_matrix_ac906d1a53417682c9da71b92c02e91a4}} 
+\index{RationalMatrix@{RationalMatrix}!GaussianJordanInverse@{GaussianJordanInverse}}
+\index{GaussianJordanInverse@{GaussianJordanInverse}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{GaussianJordanInverse()}{GaussianJordanInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::\+Gaussian\+Jordan\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inverts matrix using Gauss-\/\+Jordan elimination. 
+
+\begin{DoxyReturn}{Returns}
+the inverted matrix or the same matrix as given, if it was not a square matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_ab7f4f4d3c3f02dfb6b7203516acfc0c0}\label{class_rational_matrix_ab7f4f4d3c3f02dfb6b7203516acfc0c0}} 
+\index{RationalMatrix@{RationalMatrix}!get@{get}}
+\index{get@{get}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} Rational\+Matrix\+::get (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets element of the matrix in specific coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & numder of the row\\
+\hline
+{\em j} & number of the column\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_afaa8584a698b54e741a3bc91beb37aeb}\label{class_rational_matrix_afaa8584a698b54e741a3bc91beb37aeb}} 
+\index{RationalMatrix@{RationalMatrix}!get\_cols@{get\_cols}}
+\index{get\_cols@{get\_cols}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{get\_cols()}{get\_cols()}}
+{\footnotesize\ttfamily int Rational\+Matrix\+::get\+\_\+cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets number of columns in the matrix. 
+
+\begin{DoxyReturn}{Returns}
+Numbers of columns in the matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_af11ce0dfcf0ef5f3953aed9781a59683}\label{class_rational_matrix_af11ce0dfcf0ef5f3953aed9781a59683}} 
+\index{RationalMatrix@{RationalMatrix}!get\_matrix\_det@{get\_matrix\_det}}
+\index{get\_matrix\_det@{get\_matrix\_det}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{get\_matrix\_det()}{get\_matrix\_det()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} Rational\+Matrix\+::get\+\_\+matrix\+\_\+det (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculating the determinant of the martix. 
+
+\begin{DoxyReturn}{Returns}
+The determinant as a fraction
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a24d820000e82c8c43aec5a246727346f}\label{class_rational_matrix_a24d820000e82c8c43aec5a246727346f}} 
+\index{RationalMatrix@{RationalMatrix}!get\_mlr\_coeff@{get\_mlr\_coeff}}
+\index{get\_mlr\_coeff@{get\_mlr\_coeff}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{get\_mlr\_coeff()}{get\_mlr\_coeff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::get\+\_\+mlr\+\_\+coeff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{y }\end{DoxyParamCaption})}
+
+
+
+Builds linear regression according to given labels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & matrix of labels for regression\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix of coefficients of built regression
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_ae281ecefe1053d3d447d9fe614d71918}\label{class_rational_matrix_ae281ecefe1053d3d447d9fe614d71918}} 
+\index{RationalMatrix@{RationalMatrix}!get\_rows@{get\_rows}}
+\index{get\_rows@{get\_rows}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{get\_rows()}{get\_rows()}}
+{\footnotesize\ttfamily int Rational\+Matrix\+::get\+\_\+rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets number of rows in the matrix. 
+
+\begin{DoxyReturn}{Returns}
+Numbers of rows in the matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a1195adff64249efe07cd88d9eb4c9609}\label{class_rational_matrix_a1195adff64249efe07cd88d9eb4c9609}} 
+\index{RationalMatrix@{RationalMatrix}!getMinor@{getMinor}}
+\index{getMinor@{getMinor}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{getMinor()}{getMinor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::get\+Minor (\begin{DoxyParamCaption}\item[{int}]{ind\+Row,  }\item[{int}]{ind\+Col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates minor matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ind\+Row} & index of the row to be excluded\\
+\hline
+{\em ind\+Col} & index of the column to be excluded\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+matrix without specified row and column
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_ad5a7feb41359467ddcdc08d4932fb95f}\label{class_rational_matrix_ad5a7feb41359467ddcdc08d4932fb95f}} 
+\index{RationalMatrix@{RationalMatrix}!isEqual@{isEqual}}
+\index{isEqual@{isEqual}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{isEqual()}{isEqual()}}
+{\footnotesize\ttfamily bool Rational\+Matrix\+::is\+Equal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if matrixes are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if matrixes are equal, false otherwise
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_ac2841e46a7cafd9a3ad70b456f0f0215}\label{class_rational_matrix_ac2841e46a7cafd9a3ad70b456f0f0215}} 
+\index{RationalMatrix@{RationalMatrix}!minorInverse@{minorInverse}}
+\index{minorInverse@{minorInverse}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{minorInverse()}{minorInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::minor\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inverts matrix using minors method. 
+
+\begin{DoxyReturn}{Returns}
+the inverted matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_afbb329be303ffeb9d4d92a20fa63f6ce}\label{class_rational_matrix_afbb329be303ffeb9d4d92a20fa63f6ce}} 
+\index{RationalMatrix@{RationalMatrix}!mult@{mult}}
+\index{mult@{mult}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{mult()}{mult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::mult (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies two matrixes (this $\ast$ b). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to multiply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this matrix multiplied on parameter or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a548bc0549d4d8cbb5b56e73e724383d4}\label{class_rational_matrix_a548bc0549d4d8cbb5b56e73e724383d4}} 
+\index{RationalMatrix@{RationalMatrix}!mult@{mult}}
+\index{mult@{mult}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{mult()}{mult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::mult (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b,  }\item[{int}]{ia,  }\item[{int}]{ja,  }\item[{int}]{ib,  }\item[{int}]{jb,  }\item[{int}]{height\+Res,  }\item[{int}]{equal\+Side,  }\item[{int}]{width\+Res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies two matrixes (this $\ast$ b) or patrs of them with set start positions and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to multiply\\
+\hline
+{\em ia} & starting row index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ja} & starting column index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ib} & starting row index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em jb} & starting column index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em height\+Res} & number of rows in resulting matrix\\
+\hline
+{\em equal\+Side} & numbers of columns in the first and rows in the second matrix\\
+\hline
+{\em width\+Res} & number of columns in resulting matrix\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this matrix multiplied on parameter or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a881f3684c3077875cfc53125d3ec8e96}\label{class_rational_matrix_a881f3684c3077875cfc53125d3ec8e96}} 
+\index{RationalMatrix@{RationalMatrix}!multRec@{multRec}}
+\index{multRec@{multRec}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{multRec()}{multRec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::mult\+Rec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b,  }\item[{int}]{ia,  }\item[{int}]{ja,  }\item[{int}]{ib,  }\item[{int}]{jb,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recursive multiplying part of Strassen\textquotesingle{}s multiplication algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to multiply\\
+\hline
+{\em ia} & starting row index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ja} & starting column index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ib} & starting row index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em jb} & starting column index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em size} & number of rows and colums to be taken\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product of the matrixes
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_af08b63fc02d91bb7bd1133982811e126}\label{class_rational_matrix_af08b63fc02d91bb7bd1133982811e126}} 
+\index{RationalMatrix@{RationalMatrix}!remove\_identity\_matrix@{remove\_identity\_matrix}}
+\index{remove\_identity\_matrix@{remove\_identity\_matrix}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{remove\_identity\_matrix()}{remove\_identity\_matrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::remove\+\_\+identity\+\_\+matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Removes the left half of the columns, which will contain an identity matrix. 
+
+\begin{DoxyReturn}{Returns}
+inverted matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a5c8e0a5a532a228432e9ad2f69a635a2}\label{class_rational_matrix_a5c8e0a5a532a228432e9ad2f69a635a2}} 
+\index{RationalMatrix@{RationalMatrix}!rss@{rss}}
+\index{rss@{rss}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{rss()}{rss()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} Rational\+Matrix\+::rss (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{x,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{y,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{coeff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculats the residual sum of squares. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em coeff} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+residual sum of squares
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a2e3200ad30066da121b9b0741d29f5d4}\label{class_rational_matrix_a2e3200ad30066da121b9b0741d29f5d4}} 
+\index{RationalMatrix@{RationalMatrix}!shrink@{shrink}}
+\index{shrink@{shrink}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{shrink()}{shrink()}}
+{\footnotesize\ttfamily void Rational\+Matrix\+::shrink (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shrinks matrix to its original size, oposite to \mbox{\hyperlink{class_rational_matrix_a026c3594c6c595ffb4a1dc953a3a56ea}{extend(int max\+Size)}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & final height of the matrix\\
+\hline
+{\em width} & final width of the matrix\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rational_matrix_a5037132004aab65e761f359baffaa54a}\label{class_rational_matrix_a5037132004aab65e761f359baffaa54a}} 
+\index{RationalMatrix@{RationalMatrix}!StrassensMult@{StrassensMult}}
+\index{StrassensMult@{StrassensMult}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{StrassensMult()}{StrassensMult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::\+Strassens\+Mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Multiplies two matrixes (this $\ast$ b) using Strassen\textquotesingle{}s method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to multiply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this matrix multiplied on parameter or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a6f3297bd69c11a80ff421905cf8d759a}\label{class_rational_matrix_a6f3297bd69c11a80ff421905cf8d759a}} 
+\index{RationalMatrix@{RationalMatrix}!sum@{sum}}
+\index{sum@{sum}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::sum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds two matrixes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum of the two matrixes or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a2b5950271a607b1f77b33d6a42871345}\label{class_rational_matrix_a2b5950271a607b1f77b33d6a42871345}} 
+\index{RationalMatrix@{RationalMatrix}!sum@{sum}}
+\index{sum@{sum}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::sum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b,  }\item[{int}]{ia,  }\item[{int}]{ja,  }\item[{int}]{ib,  }\item[{int}]{jb,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds two matrixes or patrs of them with set start positions and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & matrix to add\\
+\hline
+{\em ia} & starting row index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ja} & starting column index in the first matrix (\char`\"{}this\char`\"{})\\
+\hline
+{\em ib} & starting row index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em jb} & starting column index in the second matrix (\char`\"{}b\char`\"{})\\
+\hline
+{\em height} & number of rows in the part of matrix which will be taken\\
+\hline
+{\em width} & number of colunms in the part of matrix which will be taken\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sum of the two matrixes or an empty matrix, if sizes do not match
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a915ae4780cfff3b954e580ed118a8be8}\label{class_rational_matrix_a915ae4780cfff3b954e580ed118a8be8}} 
+\index{RationalMatrix@{RationalMatrix}!transposeMatrix@{transposeMatrix}}
+\index{transposeMatrix@{transposeMatrix}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{transposeMatrix()}{transposeMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Rational\+Matrix\+::transpose\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Transposes matrix. 
+
+\begin{DoxyReturn}{Returns}
+transposed matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rational_matrix_a25df4ca40d754989389113767c11e71b}\label{class_rational_matrix_a25df4ca40d754989389113767c11e71b}} 
+\index{RationalMatrix@{RationalMatrix}!tss@{tss}}
+\index{tss@{tss}!RationalMatrix@{RationalMatrix}}
+\doxysubsubsection{\texorpdfstring{tss()}{tss()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} Rational\+Matrix\+::tss (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{x,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}}}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculats the total sum of squares. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+total sum of squares
+\end{DoxyReturn}

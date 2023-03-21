@@ -1,0 +1,75 @@
+\hypertarget{_fraction_8h_source}{}\doxysection{Fraction.\+h}
+\label{_fraction_8h_source}\index{alg\_lab1(5)/Fraction.h@{alg\_lab1(5)/Fraction.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classfract}{fract}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ num;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ denom;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classfract_a388512f7044d8b71b93db5b387485168}{print}}()\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::cout.width(3);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ std::cout\ <<\ this-\/>num;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ /"{}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::cout.width(3);}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::cout\ <<\ this-\/>denom;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ \mbox{\hyperlink{classfract_a38c2f626f4452504949efdf5c17f8126}{sum}}(\mbox{\hyperlink{classfract}{fract}}\ a)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ res\ =\ \mbox{\hyperlink{classfract}{fract}}(this-\/>num\ *\ a.denom\ +\ this-\/>denom\ *\ a.num,\ this-\/>denom\ *\ a.denom);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ \mbox{\hyperlink{classfract_aa07a79638b22a8084cb77fc552b2fa44}{diff}}(\mbox{\hyperlink{classfract}{fract}}\ a)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ res\ =\ \mbox{\hyperlink{classfract}{fract}}(this-\/>num\ *\ a.denom\ -\/\ this-\/>denom\ *\ a.num,\ this-\/>denom\ *\ a.denom);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ \mbox{\hyperlink{classfract_a6584412488a80ab463c7a5d693392a30}{mult}}(\mbox{\hyperlink{classfract}{fract}}\ a)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ res\ =\ \mbox{\hyperlink{classfract}{fract}}(this-\/>num\ *\ a.num,\ this-\/>denom\ *\ a.denom);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{classfract}{fract}}\ \mbox{\hyperlink{classfract_aa97a6a58a21c906d2ebe534992689143}{div}}(\mbox{\hyperlink{classfract}{fract}}\ a)\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classfract_a6584412488a80ab463c7a5d693392a30}{mult}}(\mbox{\hyperlink{classfract}{fract}}(a.denom,\ a.num));}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfract_ae7ee0e773c5065b2c366dc27c523f2ba}{isEqual}}(\mbox{\hyperlink{classfract}{fract}}\ a)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (this-\/>num\ ==\ a.num\ \&\&\ this-\/>denom\ ==\ a.denom);}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classfract_a03689641180cb906749a4ae8ffd25ff1}{isNull}}()\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>num\ ==\ 0)\ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classfract_a6c8c429b489b09d9231484d6f4bb2db3}{fract}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ numerator\ =\ 0,\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ denominator\ =\ 1)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (denominator\ >\ 0)\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ num\ =\ numerator;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ denom\ =\ denominator;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//simplification}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ numerator\ =\ abs(numerator);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (numerator\ \&\&\ denominator)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numerator\ >\ denominator\ ?\ numerator\ =\ numerator\ \%\ denominator\ :\ denominator\ =\ denominator\ \%\ numerator;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ gcd\ =\ numerator\ +\ denominator;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ num\ =\ num\ /\ gcd;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ denom\ =\ denom\ /\ gcd;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (denominator\ <\ 0)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ num\ =\ -\/1\ *\ numerator;}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ denom\ =\ abs(denominator);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//simplification}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ numerator\ =\ abs(numerator);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ denominator\ =\ abs(denominator);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (numerator\ \&\&\ denominator)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ numerator\ >\ denominator\ ?\ numerator\ =\ numerator\ \%\ denominator\ :\ denominator\ =\ denominator\ \%\ numerator;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ gcd\ =\ numerator\ +\ denominator;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ num\ =\ num\ /\ gcd;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ denom\ =\ denom\ /\ gcd;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \};}
+
+\end{DoxyCode}

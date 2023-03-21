@@ -168,7 +168,7 @@ void Menu::printMenu() {
 				this->add(&a, &b);
 				break;
 			case 3:
-				this->substruct(&a, &b);
+				this->substract(&a, &b);
 				break;
 			case 4:
 				this->multiply(&a, &b);
@@ -240,7 +240,7 @@ void Menu::add(RationalMatrix* a, RationalMatrix* b) {
 	cin >> c;
 	if (c == 'y') this->saveMatrix(&res);
 }
-void Menu::substruct(RationalMatrix* a, RationalMatrix* b) {
+void Menu::substract(RationalMatrix* a, RationalMatrix* b) {
 	RationalMatrix res = a->diff(b);
 	res.print();
 

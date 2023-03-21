@@ -1,0 +1,159 @@
+\hypertarget{classfract}{}\doxysection{fract Class Reference}
+\label{classfract}\index{fract@{fract}}
+
+
+Class of rational numbers.  
+
+
+
+
+{\ttfamily \#include $<$Fraction.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classfract_a388512f7044d8b71b93db5b387485168}\label{classfract_a388512f7044d8b71b93db5b387485168}} 
+void {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em Prints fraction as \char`\"{}??? /???\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{classfract_a38c2f626f4452504949efdf5c17f8126}{sum}} (\mbox{\hyperlink{classfract}{fract}} a)
+\begin{DoxyCompactList}\small\item\em Adds two fractions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{classfract_aa07a79638b22a8084cb77fc552b2fa44}{diff}} (\mbox{\hyperlink{classfract}{fract}} a)
+\begin{DoxyCompactList}\small\item\em Substructs two fractions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{classfract_a6584412488a80ab463c7a5d693392a30}{mult}} (\mbox{\hyperlink{classfract}{fract}} a)
+\begin{DoxyCompactList}\small\item\em Multiplies two fractions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classfract}{fract}} \mbox{\hyperlink{classfract_aa97a6a58a21c906d2ebe534992689143}{div}} (\mbox{\hyperlink{classfract}{fract}} a)
+\begin{DoxyCompactList}\small\item\em Divides two fractions. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfract_ae7ee0e773c5065b2c366dc27c523f2ba}{is\+Equal}} (\mbox{\hyperlink{classfract}{fract}} a)
+\begin{DoxyCompactList}\small\item\em Check if the fractions are equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classfract_a03689641180cb906749a4ae8ffd25ff1}{is\+Null}} ()
+\begin{DoxyCompactList}\small\item\em Check if the fraction is equal to 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classfract_a6c8c429b489b09d9231484d6f4bb2db3}\label{classfract_a6c8c429b489b09d9231484d6f4bb2db3}} 
+{\bfseries fract} (long long numerator=0, long long denominator=1)
+\begin{DoxyCompactList}\small\item\em Constructs a fraction with given numerator and denominator (0/1 by default) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classfract_a313a34a7d9a0f6dafeaa4697e8488714}\label{classfract_a313a34a7d9a0f6dafeaa4697e8488714}} 
+long long {\bfseries num}
+\item 
+\mbox{\Hypertarget{classfract_abf9fa1cc1a22b8b94668f2c0f27bd9ab}\label{classfract_abf9fa1cc1a22b8b94668f2c0f27bd9ab}} 
+long long {\bfseries denom}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class of rational numbers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & numerator\\
+\hline
+{\em denom} & denominator\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfract_aa07a79638b22a8084cb77fc552b2fa44}\label{classfract_aa07a79638b22a8084cb77fc552b2fa44}} 
+\index{fract@{fract}!diff@{diff}}
+\index{diff@{diff}!fract@{fract}}
+\doxysubsubsection{\texorpdfstring{diff()}{diff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} fract\+::diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfract}{fract}}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Substructs two fractions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & fraction to substruct from this\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this fraction minus parameter
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfract_aa97a6a58a21c906d2ebe534992689143}\label{classfract_aa97a6a58a21c906d2ebe534992689143}} 
+\index{fract@{fract}!div@{div}}
+\index{div@{div}!fract@{fract}}
+\doxysubsubsection{\texorpdfstring{div()}{div()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} fract\+::div (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfract}{fract}}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divides two fractions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & fraction to be a diveder\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+division of the given fractions (this / parametr)
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfract_ae7ee0e773c5065b2c366dc27c523f2ba}\label{classfract_ae7ee0e773c5065b2c366dc27c523f2ba}} 
+\index{fract@{fract}!isEqual@{isEqual}}
+\index{isEqual@{isEqual}!fract@{fract}}
+\doxysubsubsection{\texorpdfstring{isEqual()}{isEqual()}}
+{\footnotesize\ttfamily bool fract\+::is\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfract}{fract}}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the fractions are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & fraction to compare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the fractions are equal, false otherwise
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfract_a03689641180cb906749a4ae8ffd25ff1}\label{classfract_a03689641180cb906749a4ae8ffd25ff1}} 
+\index{fract@{fract}!isNull@{isNull}}
+\index{isNull@{isNull}!fract@{fract}}
+\doxysubsubsection{\texorpdfstring{isNull()}{isNull()}}
+{\footnotesize\ttfamily bool fract\+::is\+Null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the fraction is equal to 0. 
+
+\begin{DoxyReturn}{Returns}
+true if the fraction is, false otherwise
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfract_a6584412488a80ab463c7a5d693392a30}\label{classfract_a6584412488a80ab463c7a5d693392a30}} 
+\index{fract@{fract}!mult@{mult}}
+\index{mult@{mult}!fract@{fract}}
+\doxysubsubsection{\texorpdfstring{mult()}{mult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} fract\+::mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfract}{fract}}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies two fractions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & fraction to multiply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+product of the given fractions
+\end{DoxyReturn}
+\mbox{\Hypertarget{classfract_a38c2f626f4452504949efdf5c17f8126}\label{classfract_a38c2f626f4452504949efdf5c17f8126}} 
+\index{fract@{fract}!sum@{sum}}
+\index{sum@{sum}!fract@{fract}}
+\doxysubsubsection{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classfract}{fract}} fract\+::sum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classfract}{fract}}}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds two fractions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & fraction to add to this\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sum of the given fractions
+\end{DoxyReturn}

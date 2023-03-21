@@ -1,0 +1,223 @@
+\hypertarget{class_menu}{}\doxysection{Menu Class Reference}
+\label{class_menu}\index{Menu@{Menu}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_ab8f1521d0dec16eeabad713861968cad}\label{class_menu_ab8f1521d0dec16eeabad713861968cad}} 
+void {\bfseries print\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Prints menu and waits for user to choose an action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_menu_a61fd92300e0cdd8645be0a582e80ee34}{enter\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Prints ways of entering the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_menu_afeb0edd52699c8d94aeb88581598b99b}{enter\+Manually}} ()
+\begin{DoxyCompactList}\small\item\em Gets matrix, typed manually by a user. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_menu_a25690817e83547f01af69c8aee583ea3}{upload}} ()
+\begin{DoxyCompactList}\small\item\em Uploads a matrix from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_menu_ad44ce605101e463c556463194aa8844d}{generate\+Random}} ()
+\begin{DoxyCompactList}\small\item\em Constructing a matrix as an odject, filled with pseudo random rational numbers from -\/5 to 5, with fixed size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_a26345d2e3ec3ab8f188a0ab750cd8192}{save\+Matrix}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Saves matrix to a binary file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a1b9dc2a1e060d708501a14e7a98c0caa}{det}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Runs get\+\_\+matrix\+\_\+det() and prints a result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_ac23e239c1b6804e240fabc5abdb8a831}{inverse}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Runs minor\+Inverse() or Gaussian\+Jordan\+Inverse() on users choice and prints a result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_aa79a92fc83acba63801292da99e88a1c}{equality\+Check}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Runs is\+Equal(const Rational\+Matrix$\ast$ b) and prints a result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a4a243721676b2af24a2eef60661c19c4}{add}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Runs \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} sum(const Rational\+Matrix$\ast$ b) and prints a result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_aa91190e062874504fd8d8ee730cbf4ab}{substract}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Runs \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} diff(const Rational\+Matrix$\ast$ b) and prints a result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a27476a5d0698afeb11b03e910d69fbf5}{multiply}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Runs \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Strassens\+Mult(\+Rational\+Matrix$\ast$ b) and prints a result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_af1c317c0b91d8b319ee8ac86d569b59f}{linear\+Regression}} (\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$a, \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Runs get\+\_\+mlr\+\_\+coeff(\+Rational\+Matrix y) and prints a result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_a4a243721676b2af24a2eef60661c19c4}\label{class_menu_a4a243721676b2af24a2eef60661c19c4}} 
+\index{Menu@{Menu}!add@{add}}
+\index{add@{add}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Menu\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} sum(const Rational\+Matrix$\ast$ b) and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & matrix to add\\
+\hline
+{\em b} & matrix to add\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_a1b9dc2a1e060d708501a14e7a98c0caa}\label{class_menu_a1b9dc2a1e060d708501a14e7a98c0caa}} 
+\index{Menu@{Menu}!det@{det}}
+\index{det@{det}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily void Menu\+::det (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs get\+\_\+matrix\+\_\+det() and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & matrix to find a determinant\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_afeb0edd52699c8d94aeb88581598b99b}\label{class_menu_afeb0edd52699c8d94aeb88581598b99b}} 
+\index{Menu@{Menu}!enterManually@{enterManually}}
+\index{enterManually@{enterManually}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{enterManually()}{enterManually()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Menu\+::enter\+Manually (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets matrix, typed manually by a user. 
+
+\begin{DoxyReturn}{Returns}
+entered matrix or an empty matrix, if there was an error
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_a61fd92300e0cdd8645be0a582e80ee34}\label{class_menu_a61fd92300e0cdd8645be0a582e80ee34}} 
+\index{Menu@{Menu}!enterMatrix@{enterMatrix}}
+\index{enterMatrix@{enterMatrix}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{enterMatrix()}{enterMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Menu\+::enter\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Prints ways of entering the matrix. 
+
+\begin{DoxyReturn}{Returns}
+entered matrix or an empty matrix, if there was an error
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_aa79a92fc83acba63801292da99e88a1c}\label{class_menu_aa79a92fc83acba63801292da99e88a1c}} 
+\index{Menu@{Menu}!equalityCheck@{equalityCheck}}
+\index{equalityCheck@{equalityCheck}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{equalityCheck()}{equalityCheck()}}
+{\footnotesize\ttfamily void Menu\+::equality\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs is\+Equal(const Rational\+Matrix$\ast$ b) and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & matrix to ckeck for equality\\
+\hline
+{\em b} & matrix to ckeck for equality\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_ad44ce605101e463c556463194aa8844d}\label{class_menu_ad44ce605101e463c556463194aa8844d}} 
+\index{Menu@{Menu}!generateRandom@{generateRandom}}
+\index{generateRandom@{generateRandom}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{generateRandom()}{generateRandom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Menu\+::generate\+Random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Constructing a matrix as an odject, filled with pseudo random rational numbers from -\/5 to 5, with fixed size. 
+
+\begin{DoxyReturn}{Returns}
+entered matrix
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_ac23e239c1b6804e240fabc5abdb8a831}\label{class_menu_ac23e239c1b6804e240fabc5abdb8a831}} 
+\index{Menu@{Menu}!inverse@{inverse}}
+\index{inverse@{inverse}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily void Menu\+::inverse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs minor\+Inverse() or Gaussian\+Jordan\+Inverse() on users choice and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & matrix to be inverted\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_af1c317c0b91d8b319ee8ac86d569b59f}\label{class_menu_af1c317c0b91d8b319ee8ac86d569b59f}} 
+\index{Menu@{Menu}!linearRegression@{linearRegression}}
+\index{linearRegression@{linearRegression}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{linearRegression()}{linearRegression()}}
+{\footnotesize\ttfamily void Menu\+::linear\+Regression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs get\+\_\+mlr\+\_\+coeff(\+Rational\+Matrix y) and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_a27476a5d0698afeb11b03e910d69fbf5}\label{class_menu_a27476a5d0698afeb11b03e910d69fbf5}} 
+\index{Menu@{Menu}!multiply@{multiply}}
+\index{multiply@{multiply}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily void Menu\+::multiply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Strassens\+Mult(\+Rational\+Matrix$\ast$ b) and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first matrix to multiply\\
+\hline
+{\em b} & the second matrix to multiply\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_a26345d2e3ec3ab8f188a0ab750cd8192}\label{class_menu_a26345d2e3ec3ab8f188a0ab750cd8192}} 
+\index{Menu@{Menu}!saveMatrix@{saveMatrix}}
+\index{saveMatrix@{saveMatrix}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{saveMatrix()}{saveMatrix()}}
+{\footnotesize\ttfamily int Menu\+::save\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Saves matrix to a binary file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & a matrix to be saved\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if there have been an error, 0 otherwise
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_aa91190e062874504fd8d8ee730cbf4ab}\label{class_menu_aa91190e062874504fd8d8ee730cbf4ab}} 
+\index{Menu@{Menu}!substract@{substract}}
+\index{substract@{substract}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{substract()}{substract()}}
+{\footnotesize\ttfamily void Menu\+::substract (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Runs \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} diff(const Rational\+Matrix$\ast$ b) and prints a result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & matrix to substrat from\\
+\hline
+{\em b} & matrix to substract\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_a25690817e83547f01af69c8aee583ea3}\label{class_menu_a25690817e83547f01af69c8aee583ea3}} 
+\index{Menu@{Menu}!upload@{upload}}
+\index{upload@{upload}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{upload()}{upload()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} Menu\+::upload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Uploads a matrix from a file. 
+
+\begin{DoxyReturn}{Returns}
+entered matrix or an empty matrix, if there was an error
+\end{DoxyReturn}
