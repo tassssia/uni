@@ -20,9 +20,9 @@ void {\bfseries print} ()
 \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a6f3297bd69c11a80ff421905cf8d759a}{sum}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
 \begin{DoxyCompactList}\small\item\em Adds two matrixes. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_ae247415d0d72a3fa0b8cc50574d10188}{diff}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b, int ia, int ja, int ib, int jb, int height, int width)
-\begin{DoxyCompactList}\small\item\em Substructs two matrixes (this -\/ b) or patrs of them with set start positions and size. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Substracts two matrixes (this -\/ b) or patrs of them with set start positions and size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_acb129c9e2ba04e3f7563d754204a14fd}{diff}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
-\begin{DoxyCompactList}\small\item\em Substructs two matrixes (this -\/ b). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Substracts two matrixes (this -\/ b). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_a548bc0549d4d8cbb5b56e73e724383d4}{mult}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b, int ia, int ja, int ib, int jb, int height\+Res, int equal\+Side, int width\+Res)
 \begin{DoxyCompactList}\small\item\em Multiplies two matrixes (this $\ast$ b) or patrs of them with set start positions and size. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} \mbox{\hyperlink{class_rational_matrix_afbb329be303ffeb9d4d92a20fa63f6ce}{mult}} (const \mbox{\hyperlink{class_rational_matrix}{Rational\+Matrix}} $\ast$b)
@@ -212,7 +212,7 @@ coefficient of determination
 
 
 
-Substructs two matrixes (this -\/ b). 
+Substracts two matrixes (this -\/ b). 
 
 
 \begin{DoxyParams}{Parameters}
@@ -230,11 +230,11 @@ this matrix minus parameter or an empty matrix, if sizes do not match
 
 
 
-Substructs two matrixes (this -\/ b) or patrs of them with set start positions and size. 
+Substracts two matrixes (this -\/ b) or patrs of them with set start positions and size. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em b} & matrix to substruct\\
+{\em b} & matrix to substract\\
 \hline
 {\em ia} & starting row index in the first matrix (\char`\"{}this\char`\"{})\\
 \hline
