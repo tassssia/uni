@@ -1,0 +1,11 @@
+num – a rational fraction numerator
+denom – a rational fraction denominator
+fract – an irreducible rational fraction (m/n, where m is integer, n is natural)
+RationalMatrix – a matrix all elements of which are rational numbers (contained as fractions)
+sum – adds a parameter to an object: fraction or matrix, and returns the result as a new object
+diff – subtracts a parameter from an object: fraction or matrix, and returns the result as a new object
+mult – multiplies an object on a parameter: fraction or matrix, in regular way and returns the result as a new object
+StrassensMult – multiplies a matrix on a parameter (also matrix) using Strassen’s multiplication and returns the result as a new object
+div – divides a fraction on a parameter (also fraction) and returns a result as a new object
+minorInverse – uses the method of minors to get an inverted matrix and returns the result as a new object
+GaussianJordanInverse – uses the method of Gaussian-Jordan elimination to get an inverted matrix and returns the result as a new object
