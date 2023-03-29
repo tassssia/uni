@@ -67,7 +67,7 @@ void RationalMatrix::exchange(int row1, int row2) {
 
 RationalMatrix RationalMatrix::GaussianJordanInverse() {
 	RationalMatrix res;
-	if (this->rows != this->cols) {
+	if (this->rows != this->cols || this->get_matrix_det().isNull()) {
 		return res;
 	}
 	RationalMatrix curr = this->add_identity_matrix();
