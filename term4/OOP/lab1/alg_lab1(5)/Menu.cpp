@@ -14,12 +14,14 @@ RationalMatrix Menu::enterMatrix() {
 		<< "3 - generate\n"
 		<< "0 - quit\n";
 	cin >> c;
+	RationalMatrix t;
 	switch (c) {
 	case 1:
 		return this->enterManually();
 	case 2:
 		fromFile = this->upload();
-		if (fromFile.isEqual(&RationalMatrix({}))) {
+		t = RationalMatrix({});
+		if (fromFile.isEqual(&t)) {
 			return this->enterMatrix();
 		}
 		else return fromFile;
@@ -27,7 +29,8 @@ RationalMatrix Menu::enterMatrix() {
 		return this->generateRandom();
 	default:
 		this->printMenu();
-		return RationalMatrix({});
+		t = RationalMatrix({});
+		return t;
 	}
 }
 RationalMatrix Menu::enterManually() {
@@ -58,7 +61,8 @@ RationalMatrix Menu::upload() {
 	if (!fp) {
 		cout << "File not found\n";
 		fclose(fp);
-		return RationalMatrix({});
+		RationalMatrix t = RationalMatrix({});
+		return t;
 	}
 
 	int m, n;
