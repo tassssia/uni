@@ -1,5 +1,4 @@
 #include "RationalMatrix.h"
-#include "Fraction.h"
 #include "cmath"
 
 RationalMatrix RationalMatrix::getMinor( int indRow, int indCol)
@@ -20,7 +19,8 @@ RationalMatrix RationalMatrix::getMinor( int indRow, int indCol)
         }
     }
 
-    return  RationalMatrix(temp_matrix);
+    RationalMatrix res = RationalMatrix(temp_matrix);
+    return res;
 }
 
 RationalMatrix RationalMatrix::transposeMatrix() {
@@ -30,28 +30,29 @@ RationalMatrix RationalMatrix::transposeMatrix() {
         for (int j = 0; j < this->cols; j++)
             res[j][i] = this->content[i][j];
 
-    return RationalMatrix(res);
+    RationalMatrix mRes = RationalMatrix(res);
+    return mRes;
 }
 
 RationalMatrix RationalMatrix::minorInverse(){
-    std::vector<std::vector<fract>> temp_matrix(this->rows,std::vector<fract>(this->cols)); // to store matrix of minors
-
-
+    RationalMatrix res;
+    if (this->cols != this->rows) return res;
     fract det = this->get_matrix_det();
 
     if(det.isEqual(fract(0,1)) || det.isEqual(fract(INT_MAX, 1))){
         std::cout << "Error. Matrix det = 0" << std::endl;
+        return res;
     }
-    else{
-
-        for(int i = 0; i < this->rows; i++){
-            for(int j = 0; j < this->cols; j++){
-
-                RationalMatrix matrix_minor = this->getMinor(i, j);
-                temp_matrix[i][j] = fract((long long)pow(-1.0, i + j + 2), 1).mult(matrix_minor.get_matrix_det().div( det));
-            }
+    
+    std::vector<std::vector<fract>> temp_matrix(this->rows, std::vector<fract>(this->cols)); // to store matrix of minors
+    for(int i = 0; i < this->rows; i++)
+    {
+        for(int j = 0; j < this->cols; j++)
+        {
+            RationalMatrix matrix_minor = this->getMinor(i, j);
+            temp_matrix[i][j] = fract((long long)pow(-1.0, i + j + 2), 1).mult(matrix_minor.get_matrix_det().div( det));
         }
-
-        return RationalMatrix(temp_matrix).transposeMatrix();
     }
+    res = RationalMatrix(temp_matrix).transposeMatrix();
+    return res;
 }
