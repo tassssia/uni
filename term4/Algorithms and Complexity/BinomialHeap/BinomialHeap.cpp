@@ -20,7 +20,7 @@ int main()
     int num, denom;
     while (!quit)
     {
-        cout << "choose an action:\n1 - print\n2 - insert element\n3 - delete element\n4 - check presence\n0 - quit\n";
+        cout << "choose an action:\n1 - print\n2 - insert element\n3 - delete element\n4 - check presence\n5 - find minimum key value\n0 - quit\n";
         cin >> c;
         switch (c) {
         case '1':
@@ -46,6 +46,11 @@ int main()
             x = ratio(num, denom);
             if (heap.isPresent(x)) cout << "It's present\n";
             else cout << "It's abscent\n";
+            break;
+        case '5':
+            cout << "Minimum is ";
+            heap.minValue().print();
+            cout << "\n";
             break;
         default:
             quit = 1;
