@@ -45,7 +45,7 @@ int main()
             cin >> num >> c >> denom;
             x = ratio(num, denom);
             if (heap.isPresent(x)) cout << "It's present\n";
-            else cout << "It's abscent\n";
+            else cout << "It's absent\n";
             break;
         case '5':
             cout << "Minimum is ";
