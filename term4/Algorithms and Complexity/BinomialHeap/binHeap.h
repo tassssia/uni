@@ -102,31 +102,6 @@ class binHeap {
 			ptr2 = ptr2->sibling;
 		}
 	}
-	void binHeapUnion(binHeap* first, binHeap* second) {
-		merge(first, second);
-		if (!head) return;
-
-		node* prev = NULL, * curr = head, * next = curr->sibling;
-		while (next) {
-			if (curr->degree != next->degree ||
-				(next->sibling && next->sibling->degree == curr->degree)) {
-				prev = curr;
-				curr = next;
-			}
-			else if (!(curr->key > next->key)) {
-				curr->sibling = next->sibling;
-				curr->link(next);
-			}
-			else {
-				if (!prev) head = next;
-				else prev->sibling = next;
-
-				next->link(curr);
-				curr = next;
-			}
-			next = curr->sibling;
-		}
-	}
 
 	void decreaseKey(node* toDec, ratio value) {
 		if (value > toDec->key) return;
@@ -211,14 +186,26 @@ public:
 		}
 	}
 
-	bool isPresent(ratio key) {
-		return (bool)this->find(key);
-	}
-
 	void insert(ratio key) {
 		binHeap* toIns = new binHeap();
 		toIns->head->key = key;
 		binHeapUnion(this, toIns);
+	}
+
+	bool isPresent(ratio key) {
+		return (bool)this->find(key);
+	}
+
+	ratio minValue() {
+		if (!head) return ratio(INT_MAX, 1);
+		node* min = head, * ptr = head->sibling;
+		while (ptr)
+		{
+			if (ptr->key < min->key) min = ptr;
+			ptr = ptr->sibling;
+		}
+
+		return min->key;
 	}
 
 	void erase(ratio key) {
@@ -229,5 +216,31 @@ public:
 		};
 		this->decreaseKey(toDel, ratio(-1000000, 1));
 		this->extractMin();
+	}
+
+	void binHeapUnion(binHeap* first, binHeap* second) {
+		merge(first, second);
+		if (!head) return;
+
+		node* prev = NULL, * curr = head, * next = curr->sibling;
+		while (next) {
+			if (curr->degree != next->degree ||
+				(next->sibling && next->sibling->degree == curr->degree)) {
+				prev = curr;
+				curr = next;
+			}
+			else if (!(curr->key > next->key)) {
+				curr->sibling = next->sibling;
+				curr->link(next);
+			}
+			else {
+				if (!prev) head = next;
+				else prev->sibling = next;
+
+				next->link(curr);
+				curr = next;
+			}
+			next = curr->sibling;
+		}
 	}
 };
