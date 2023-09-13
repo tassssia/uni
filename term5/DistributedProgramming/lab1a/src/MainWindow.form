@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="MainWindow">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="40" left="40" bottom="40" right="40"/>
+    <constraints>
+      <xy x="20" y="20" width="365" height="473"/>
+    </constraints>
+    <properties>
+      <background color="-1118482"/>
+      <enabled value="true"/>
+      <foreground color="-14605789"/>
+    </properties>
+    <border type="none">
+      <size top="70" left="40" bottom="70" right="40"/>
+    </border>
+    <children>
+      <component id="44f7f" class="javax.swing.JSlider" binding="slider">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="36"/>
+          </grid>
+        </constraints>
+        <properties>
+          <alignmentX value="0.5"/>
+          <alignmentY value="0.5"/>
+          <background color="-1118482"/>
+          <foreground color="-14605789"/>
+          <majorTickSpacing value="10"/>
+          <minorTickSpacing value="0"/>
+          <paintLabels value="true"/>
+          <paintTicks value="true"/>
+          <paintTrack value="true"/>
+          <requestFocusEnabled value="true"/>
+          <snapToTicks value="false"/>
+          <valueIsAdjusting value="false"/>
+        </properties>
+      </component>
+      <grid id="10467" binding="controls" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="50" left="20" bottom="20" right="20"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="1" fill="1" indent="0" use-parent-layout="true"/>
+        </constraints>
+        <properties>
+          <background color="-1118482"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <grid id="152e3" binding="inputs" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="true" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="20" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1118482"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="f1437" class="javax.swing.JSpinner" binding="spinner1" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="6" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1118482"/>
+                  <foreground color="-1"/>
+                  <opaque value="true"/>
+                  <requestFocusEnabled value="true"/>
+                </properties>
+              </component>
+              <component id="dc5d" class="javax.swing.JSpinner" binding="spinner2" default-binding="true">
+                <constraints>
+                  <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <background color="-1118482"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <component id="6727" class="javax.swing.JButton" binding="startBtn">
+            <constraints>
+              <grid row="1" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <borderPainted value="true"/>
+              <text value="Start!"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
