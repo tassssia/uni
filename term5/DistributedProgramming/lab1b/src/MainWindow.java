@@ -52,7 +52,7 @@ public class MainWindow extends JFrame {
         window.start1Btn.addActionListener(e -> {
             if (SEMAPHORE == 0) {
                 window.currThread = new myThread(window.slider, 10);
-                window.currThread.setPriority(Thread.MAX_PRIORITY);
+                window.currThread.setPriority(Thread.MIN_PRIORITY);
                 window.currThread.start();
 
                 window.start1Btn.setEnabled(false);
@@ -76,7 +76,7 @@ public class MainWindow extends JFrame {
         window.start2Btn.addActionListener(e -> {
             if (SEMAPHORE == 0) {
                 window.currThread = new myThread(window.slider, 90);
-                window.currThread.setPriority(Thread.MIN_PRIORITY);
+                window.currThread.setPriority(Thread.MAX_PRIORITY);
                 window.currThread.start();
 
                 window.start2Btn.setEnabled(false);
