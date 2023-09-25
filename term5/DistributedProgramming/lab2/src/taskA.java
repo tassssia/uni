@@ -27,7 +27,7 @@ public class taskA {
         SecureRandom random = new SecureRandom();
         int winnie = random.nextInt(forestSize);
         forest.set(winnie, true);
-        System.out.println("Winnie has hidden in " + winnie + " cell");
+        System.out.println("Winnie has hidden in cell " + winnie);
 
         for (int i = 0; i < sectionsNum; i++) {
             taskQueue.offer(i);
