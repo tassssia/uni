@@ -2,10 +2,10 @@ import math
 EPS = 0.001
 
 def f(x):
-    return x**2 + math.sin(x) - 12*x - 0.25
+    return math.sin(x) - 0.5
 
 def df(x):
-    return 2*x + math.cos(x) - 12
+    return math.cos(x)
 
 class result:
     def __init__(self, value, iterations, error):
@@ -22,15 +22,15 @@ def DichotomyMethod(left, right):
     fr = f(right)
     if fl * fr > 0:
         print("Incorrect interval")
-        return Result(float('inf'), i, EPS)
+        return result(float('inf'), i, EPS)
 
     middle = (left + right) / 2
     fm = f(middle)
     while right - left >= EPS:
         if abs(fl) < EPS:
-            return Result(left, i, EPS)
+            return result(left, i, EPS)
         if abs(fr) < EPS:
-            return Result(right, i, EPS)
+            return result(right, i, EPS)
 
         if fl * fm < 0:
             right = middle
