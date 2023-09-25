@@ -50,7 +50,7 @@ def getNext(current, alpha):
 
 def RelaxationMethod(current):
     i = 1
-    alpha = 2 / df(current)
+    alpha = 1 / df(current)
 
     nextVal = getNext(current, alpha)
 
