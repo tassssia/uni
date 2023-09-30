@@ -22,26 +22,24 @@ class PieceOfProperty {
 
 public class taskB {
     private SecureRandom random = new SecureRandom();
-    //private int statePropertyNum;
+    private int statePropertyNum;
     private final Stack<PieceOfProperty> stateProperty = new Stack<PieceOfProperty>();
     private static int minCost = 10;
     private static int maxCost = 200;
-    private int totalNum = 0;
     private SynchronousQueue<PieceOfProperty> toLoad = new SynchronousQueue<PieceOfProperty>();
     private SynchronousQueue<PieceOfProperty> toCount = new SynchronousQueue<PieceOfProperty>();
 
     public taskB(int statePropertyNum) {
-        //this.statePropertyNum = statePropertyNum;
+        this.statePropertyNum = statePropertyNum;
         for (int i = 0; i < statePropertyNum; i++) {
             stateProperty.push(new PieceOfProperty(i, random.nextInt(minCost + maxCost) - minCost)) ;
         }
-        totalNum = statePropertyNum;
     }
 
     public void IvanovAct() throws InterruptedException {
         PieceOfProperty current;
         int taken = 0;
-        while (taken != totalNum) {
+        while (taken != statePropertyNum) {
             current = stateProperty.pop();
             System.out.println("Ivanov has taken item " + current.getId());
             this.toLoad.put(current);
@@ -53,7 +51,7 @@ public class taskB {
     public void PetrovAct() throws InterruptedException {
         PieceOfProperty current;
         int loaded = 0;
-        while (loaded != totalNum) {
+        while (loaded != statePropertyNum) {
             current = this.toLoad.take();
             System.out.println("Petrov is loading item " + current.getId());
             this.toCount.put(current);
@@ -66,7 +64,7 @@ public class taskB {
         PieceOfProperty current;
         int totalCost = 0;
         int counted = 0;
-        while (counted != totalNum) {
+        while (counted != statePropertyNum) {
             current = this.toCount.take();
             System.out.println("Nechyporchuk has added cost of item " + current.getId());
             totalCost += current.getCost();
