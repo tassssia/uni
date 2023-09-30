@@ -32,7 +32,7 @@ public class taskB {
     public taskB(int statePropertyNum) {
         this.statePropertyNum = statePropertyNum;
         for (int i = 0; i < statePropertyNum; i++) {
-            stateProperty.push(new PieceOfProperty(i, random.nextInt(minCost + maxCost) - minCost)) ;
+            stateProperty.push(new PieceOfProperty(i, random.nextInt(maxCost - minCost) + minCost)) ;
         }
     }
 
