@@ -77,7 +77,7 @@ class Pot {
         this.volume = volume;
     }
 
-    public synchronized void add(){
+    public synchronized void add() {
         while(isFull()){
             try {
                 wait();
