@@ -82,7 +82,7 @@ public class taskA {
     public static void main(String[] args) {
         int swarmsNum = 10;
         int forestSize = 1000;
-        int sectionMaxSize = 37;
+        int sectionMaxSize = 7;
 
         taskA a = new taskA(swarmsNum, forestSize, sectionMaxSize);
         a.searching();
