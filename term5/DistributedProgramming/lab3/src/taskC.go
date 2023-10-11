@@ -27,7 +27,7 @@ func start(table *[]bool, SmokingSemaphore chan bool, DealingSemaphore chan bool
 	for {
 		<-DealingSemaphore
 		var component1, component2 = getComponents()
-		println("Dealt", component1+1, "and", component2+1)
+		println("Dealt", component1, "and", component2)
 		(*table)[component1] = true
 		(*table)[component2] = true
 		<-SmokingSemaphore
