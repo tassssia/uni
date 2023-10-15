@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.security.SecureRandom;
 public abstract class GraphThread extends Thread {
     Graph graph;
