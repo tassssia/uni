@@ -33,9 +33,17 @@ public class Data {
         return res;
     }
 
-    public void lockRead() {readWriteLock.readLock().lock();}
-    public void lockWrite() {readWriteLock.writeLock().lock();}
+    public void lockRead() {
+        readWriteLock.readLock().lock();
+    }
+    public void lockWrite() {
+        readWriteLock.writeLock().lock();
+    }
 
-    public void unlockRead() {readWriteLock.readLock().unlock();}
-    public void unlockWrite() {readWriteLock.writeLock().unlock();}
+    public void unlockRead() {
+        readWriteLock.readLock().unlock();
+    }
+    public void unlockWrite() {
+        readWriteLock.writeLock().unlock();
+    }
 }
