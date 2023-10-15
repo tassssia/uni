@@ -9,8 +9,9 @@ public class Graph {
         locks = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             ArrayList<ReadWriteLock> tmp = new ArrayList<>(size);
-            for (int j = 0; j < size; j++)
+            for (int j = 0; j < size; j++) {
                 tmp.add(new ReadWriteLock());
+            }
             locks.add(tmp);
         }
 
@@ -18,17 +19,16 @@ public class Graph {
         costs = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             ArrayList<Integer> tmp = new ArrayList<>(size);
-            for (int j = 0; j < size; j++)
-                //tmp.add(random.nextInt(101) * (random.nextInt(3) % 2));
+            for (int j = 0; j < size; j++) {
                 tmp.add(0);
+            }
             costs.add(tmp);
         }
-
         for (int i = 0; i < size; i++) {
             for (int j = i + 1; j < size; j++) {
-                int price = (random.nextInt(100) + 1) * (random.nextInt(3) % 2);
-                costs.get(i).set(j, price);
-                costs.get(j).set(i, price);
+                int cost = (random.nextInt(100) + 1) * (random.nextInt(3) % 2);
+                costs.get(i).set(j, cost);
+                costs.get(j).set(i, cost);
             }
         }
     }
@@ -44,6 +44,34 @@ public class Graph {
     public int setCost(int i, int j, int value) throws Exception {
         if (i < 0 || j < 0) throw new Exception();
         return costs.get(i).set(j, value);
+    }
+
+    public void addCity() {
+        SecureRandom random = new SecureRandom();
+        int t;
+        ArrayList<Integer> tmpCost = new ArrayList<>(getSize() + 1);
+        ArrayList<ReadWriteLock> tmpLock = new ArrayList<>(getSize() + 1);
+
+        for (int i = 0; i < getSize(); i++) {
+            t = (random.nextInt(100) + 1) * (random.nextInt(3) % 2);
+            costs.get(i).add(t);
+            locks.get(i).add(new ReadWriteLock());
+            tmpCost.add(t);
+            tmpLock.add(new ReadWriteLock());
+        }
+        costs.add(tmpCost);
+        locks.add(tmpLock);
+    }
+    public void removeCity(int city) {
+        if (city >= getSize()) { return; }
+
+        costs.remove(city);
+        locks.remove(city);
+
+        for (int i = 0; i < getSize(); i++) {
+            costs.get(i).remove(city);
+            locks.get(i).remove(city);
+        }
     }
 
     public void LockRead(int i, int j) {
@@ -68,6 +96,16 @@ public class Graph {
         for (int i = 0; i < locks.size(); i++)
             for (int j = 0; j < locks.get(0).size(); j++)
                 UnlockRead(i ,j);
+    }
+    public void LockWrite() {
+        for (int i = 0; i < locks.size(); i++)
+            for (int j = 0; j < locks.get(0).size(); j++)
+                LockWrite(i ,j);
+    }
+    public void UnlockWrite() {
+        for (int i = 0; i < locks.size(); i++)
+            for (int j = 0; j < locks.get(0).size(); j++)
+                UnlockWrite(i ,j);
     }
 
     public void matrixOutput() {
