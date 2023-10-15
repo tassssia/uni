@@ -41,7 +41,7 @@ class PriceChanger extends GraphThread {
             graph.UnlockWrite(i, j);
 
             try {
-                Thread.sleep(5000);
+                Thread.sleep(2000);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
@@ -66,7 +66,7 @@ class WaysEditor extends GraphThread {
             System.out.println("Editing way " + i + " - " + j);
             try {
                 if (graph.getCost(i, j) == 0) {
-                    graph.setCost(i, j, random.nextInt(graph.getSize()));
+                    graph.setCost(i, j, random.nextInt(100) + 1);
                     System.out.println("Way " + i + " - " + j + " was added with a cost of " + graph.getCost(i, j));
                 }
                 else {
@@ -81,7 +81,7 @@ class WaysEditor extends GraphThread {
             graph.UnlockWrite(i, j);
 
             try {
-                Thread.sleep(5000);
+                Thread.sleep(2000);
             }
             catch (InterruptedException e) {
                 e.printStackTrace();
@@ -118,7 +118,7 @@ class CitiesEditor extends GraphThread {
         graph.UnlockWrite();
 
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         }
         catch (InterruptedException e) {
             e.printStackTrace();
@@ -133,6 +133,34 @@ class WaySearcher extends GraphThread {
 
     @Override
     public void run() {
+        SecureRandom random = new SecureRandom();
+        while (true) {
+            int city1 = random.nextInt(graph.getSize());
+            int city2 = city1;
+            while (city2 == city1) {
+                city2 = random.nextInt(graph.getSize());
+            }
 
+            graph.LockRead();
+            System.out.println("Started searching way between " + city1 + " - " + city2);
+            try {
+                int way = graph.calcCost(city1, city2);
+                if (way == 0) {
+                    System.out.println("There is no way between " + city1 + " - " + city2);
+                } else {
+                    System.out.println("The way between " + city1 + " - " + city2 + " costs " + way);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println("Finished searching");
+            graph.UnlockRead();
+
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

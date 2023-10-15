@@ -1,5 +1,7 @@
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Graph {
     private ArrayList<ArrayList<Integer>> costs;
@@ -59,6 +61,9 @@ public class Graph {
             tmpCost.add(t);
             tmpLock.add(new ReadWriteLock());
         }
+        tmpCost.add(0);
+        tmpLock.add(new ReadWriteLock());
+
         costs.add(tmpCost);
         locks.add(tmpLock);
     }
@@ -72,6 +77,28 @@ public class Graph {
             costs.get(i).remove(city);
             locks.get(i).remove(city);
         }
+    }
+
+    public Integer calcCost(int city1, int city2) {
+        int size = getSize();
+        int[] dist = new int[size];
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(city1);
+        dist[city1] = 0;
+
+        while (!queue.isEmpty()) {
+            int curr = queue.poll();
+
+            for (int v = 0; v < size; v++) {
+                if (costs.get(curr).get(v) > 0 && dist[v] == 0) {
+                    dist[v] = dist[curr] + costs.get(curr).get(v);
+                    queue.offer(v);
+                }
+            }
+        }
+
+        return dist[city2];
     }
 
     public void LockRead(int i, int j) {
