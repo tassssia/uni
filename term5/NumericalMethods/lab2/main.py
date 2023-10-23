@@ -81,7 +81,7 @@ def seidel(A, b, x0, eps):
     x = x0.copy()
     iter = 0
 
-    while True:
+    while iter < 1000:
         for i in range(n):
             s1 = np.dot(A[i, :i], x[:i])
             s2 = np.dot(A[i, i+1:], x[i+1:])
@@ -97,17 +97,18 @@ def check(A, b, x, eps=0.001):
     return np.linalg.norm(np.dot(A, x) - b) <= eps
 
 EPS = 0.0001
-size = 4
+size = 30
 bound = 5
 
-A = get_matrix(size, -bound, bound)
-#A = get_hilbert(size)
-b = np.random.uniform(-bound, bound, size)
+#A = get_matrix(size, -bound, bound)
+A = get_hilbert(size)
+#b = np.random.uniform(-bound, bound, size)
+b = np.sum(A, axis=1)
 x0 = np.zeros(len(b), dtype=float)
 
 gx = gauss_lu(A, b)
 print("Gauss:", gx, check(A, b, gx))
-jx, ji = jacobi(A, b, x0, EPS)
-print("Jacobi (", ji, "):", jx, check(A, b, jx))
+#jx, ji = jacobi(A, b, x0, EPS)
+#print("Jacobi (", ji, "):", jx, check(A, b, jx))
 sx, si = seidel(A, b, x0, EPS)
 print("Seidel (", si, "):", sx, check(A, b, sx))
