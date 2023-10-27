@@ -25,16 +25,16 @@ def after_year(books, year)
   books.select { |book| book.year > year }.map(&:id)
 end
 
-books = Array.new
-books << Book.new(1, "To Kill a Mockingbird", ["Harper Lee"], "J. B. Lippincott & Co.", 1960, 281, 9.99, "hardcover")
-books << Book.new(2, "1984", ["George Orwell"], "Secker & Warburg", 1949, 328, 10.99, "paperback")
-books << Book.new(3, "Pride and Prejudice", ["Jane Austen"], "T. Egerton", 1813, 279, 7.99, "hardcover")
-books << Book.new(4, "The Catcher in the Rye", ["J.D. Salinger"], "Little, Brown and Company", 1951, 277, 8.99, "paperback")
-books << Book.new(5, "Brave New World", ["Aldous Huxley"], "Chatto & Windus", 1932, 311, 11.99, "hardcover")
-
-author = "George Orwell"
+books = [
+  Book.new(1, "The Lord of the Rings", ["J.R.R. Tolkien"], "George Allen & Unwin", 1954, 1178, 24.99, "paperback"),
+  Book.new(2, "To the Lighthouse", ["Virginia Woolf"], "Hogarth Press", 1927, 182, 10.99, "hardcover"),
+  Book.new(3, "The Catcher in the Rye", ["J.D. Salinger"], "Little, Brown and Company", 1951, 277, 8.99, "paperback"),
+  Book.new(4, "Pride and Prejudice", ["Jane Austen"], "T. Egerton", 1813, 279, 7.99, "hardcover"),
+  Book.new(5, "The Grapes of Wrath", ["John Steinbeck"], "The Viking Press", 1939, 464, 14.99, "paperback")
+]
+author = "Virginia Woolf"
 puts "Books of #{author}: #{by_author(books, author)}"
-publisher = "Little, Brown and Company"
+publisher = "The Viking Press"
 puts "Books of #{publisher}: #{by_publisher(books, publisher)}"
 year = 1900
 puts "Books published after #{year}: #{after_year(books, year)}"
