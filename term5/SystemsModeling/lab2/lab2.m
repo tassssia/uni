@@ -10,19 +10,43 @@ A = double(A);
 B = double(B);
  
 pseudoinverseG = greville(A);
-check(pseudoinverseG,A);
-
+check(pseudoinverseG, A)
 operatorG = B * pseudoinverseG;
 resG = uint8(operatorG * A);
- 
 figure
-imshow(resG);
+imshow(resG)
+disp(pseudoinverseG)
+resMultG = A * pseudoinverseG;
+disp(resMultG)
+disp("Error Greville: " + norm(resMultG - eye(size(resMultG,1))))
 
-disp(pseudoinverseG);
-resMult = A*pseudoinverseG;
-disp(resMult);
-disp("Error: " + norm(resMult - eye(size(resMult,1))));
- 
+pseudoinverseMP = MoorePenrose(A, 0.00001);
+check(pseudoinverseMP, A)
+operatorMP = B * pseudoinverseMP;
+resMP = uint8(operatorMP * A);
+figure
+imshow(resMP)
+disp(pseudoinverseMP)
+resMultMP = A * pseudoinverseMP;
+disp(resMultMP)
+disp("Error Moore-Penrose: " + norm(resMultMP - eye(size(resMultMP,1))))
+
+function result = MoorePenrose(A, eps)
+    delta = 1;
+    curr_eps = eps+1;
+    E = eye(size(A, 1));
+    curr_a = transpose(A) / (A * transpose(A) + delta * E);
+   
+    while curr_eps > eps
+        prev_a = curr_a;
+        delta = delta/2;
+        curr_a = transpose(A) / (A * transpose(A) + delta * E);
+        curr_eps = norm(curr_a - prev_a);
+    end
+
+    result = curr_a;
+end
+
 function result = greville(A)
      curr_a = A(1,:);
      curr = zeros(size(curr_a));
