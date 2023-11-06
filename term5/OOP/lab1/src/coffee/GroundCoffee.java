@@ -1,5 +1,7 @@
 package coffee;
 
+import java.util.Scanner;
+
 public class GroundCoffee extends Coffee {
     public GroundCoffee(double cost, int volume) {
         super(cost, volume);
@@ -10,8 +12,11 @@ public class GroundCoffee extends Coffee {
 
     @Override
     public void prepareForSelling() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Which brewing do you prefer: espresso, filter, or Turkish? [e/f/t] ");
-        String brewingType = System.console().readLine().toLowerCase();
+        String brewingType = scanner.nextLine().toLowerCase();
+        scanner.close();
+
         brew(brewingType);
     }
 

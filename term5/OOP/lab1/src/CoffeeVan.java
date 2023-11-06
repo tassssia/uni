@@ -13,15 +13,16 @@ public class CoffeeVan {
 
     public CoffeeVan(int capacity) {
         cargo = new ArrayList<>();
+        this.capacity = capacity;
         loaded = 0;
         cash = 0;
         tips = 0;
-        load(capacity);
+        load(capacity-10);
     }
 
-    private void load(int capacity) {
+    private void load(int capToLoad) {
         boolean flag = true;
-        while (flag) {
+        while (loaded < capToLoad && flag) {
             int type = random.nextInt(3);
 
             switch (type) {
@@ -100,9 +101,9 @@ public class CoffeeVan {
     }
 
     public double getCash() {
-        return cash;
+        return Math.round(cash * 100.0) / 100.0;
     }
     public double getTips() {
-        return tips;
+        return Math.round(tips * 100.0) / 100.0;
     }
 }
