@@ -1,16 +1,18 @@
 package coffee;
 
 public abstract class Coffee {
+    private static double COST_PER_X_WEIGHT = 100;
+    private static double WEIGNT_PER_SERVING = 50;
     protected double price;
-    protected double cost; // per 100 of weight
+    protected double cost;
     protected double weight;
-    protected int volume; // 50 of weight per serving
+    protected int volume;
 
     protected Coffee(double cost, int volume) {
         this.cost = cost;
-        this.weight = 50 * volume;
+        this.weight = WEIGNT_PER_SERVING * volume;
         this.volume = volume;
-        this.price = cost * weight * 0.01;
+        this.price = cost * weight / COST_PER_X_WEIGHT;
     }
 
 
@@ -30,7 +32,7 @@ public abstract class Coffee {
     }
     public void setVolume(int volume) {
         this.volume = volume;
-        this.weight = 100*volume;
+        this.weight = WEIGNT_PER_SERVING * volume;
     }
 
     public double getCost() {
@@ -38,6 +40,6 @@ public abstract class Coffee {
     }
     public void setCost(double cost) {
         this.cost = cost;
-        this.price = cost * weight * 0.01;
+        this.price = cost * weight / COST_PER_X_WEIGHT;
     }
 }
