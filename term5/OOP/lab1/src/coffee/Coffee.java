@@ -9,10 +9,8 @@ public abstract class Coffee {
     protected int volume;
 
     protected Coffee(double cost, int volume) {
-        this.cost = cost;
-        this.weight = WEIGNT_PER_SERVING * volume;
-        this.volume = volume;
-        this.price = cost * weight / COST_PER_X_WEIGHT;
+        setCost(cost);
+        setVolume(volume);
     }
 
 
