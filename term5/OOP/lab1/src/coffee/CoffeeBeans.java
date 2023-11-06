@@ -3,6 +3,9 @@ package coffee;
 public class CoffeeBeans extends Coffee {
     public CoffeeBeans(double cost, int volume) {
         super(cost, volume);
+        if (volume < 4) {
+            setVolume(4);
+        }
     }
 
     @Override
