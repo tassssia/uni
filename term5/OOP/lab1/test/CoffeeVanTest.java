@@ -18,7 +18,7 @@ public class CoffeeVanTest {
     @Test
     public void testLoad() {
         coffeeVan.load(500);
-        assertTrue(coffeeVan.loaded > 0);
+        assertTrue(coffeeVan.getLoaded() > 0);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class CoffeeVanTest {
         coffeeList.add(new GroundCoffee(22, 3));
 
         assertTrue(coffeeVan.load(coffeeList));
-        assertEquals(2, coffeeVan.cargo.size());
+        assertEquals(2, coffeeVan.getCargo().size());
     }
 
     @Test
@@ -46,12 +46,12 @@ public class CoffeeVanTest {
     @Test
     public void testSell() {
         coffeeVan.addCoffeeItem(new CoffeeBeans(20, 6));
-        Coffee coffeeToSell = coffeeVan.cargo.get(0);
+        Coffee coffeeToSell = coffeeVan.getCargo().get(0);
         double initialCash = coffeeVan.getCash();
 
         coffeeVan.sell(coffeeToSell);
 
-        assertTrue(coffeeVan.cargo.isEmpty());
+        assertTrue(coffeeVan.getCargo().isEmpty());
         assertEquals(initialCash + coffeeToSell.getPrice(), coffeeVan.getCash());
     }
 }
