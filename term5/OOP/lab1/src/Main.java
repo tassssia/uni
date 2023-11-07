@@ -8,6 +8,7 @@ public class Main {
         SecureRandom random = new SecureRandom();
 
         CoffeeVan van = new CoffeeVan(100);
+        van.load(90);
 
         // instant coffee in a cup
         ArrayList<Coffee> instantCup = van.findByParameters("i", 4, 10, 1, 3);

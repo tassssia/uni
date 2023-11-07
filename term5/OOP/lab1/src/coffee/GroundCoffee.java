@@ -20,7 +20,7 @@ public class GroundCoffee extends Coffee {
         brew(brewingType);
     }
 
-    public void brew(String type) {
+    private void brew(String type) {
         switch (type) {
             case "e":
                 System.out.println("Brewing espresso...");

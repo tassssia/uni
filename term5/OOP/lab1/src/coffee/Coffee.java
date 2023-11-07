@@ -9,8 +9,8 @@ public abstract class Coffee {
     protected int volume;
 
     protected Coffee(double cost, int volume) {
-        setCost(cost);
         setVolume(volume);
+        setCost(cost);
     }
 
 
@@ -38,6 +38,6 @@ public abstract class Coffee {
     }
     public void setCost(double cost) {
         this.cost = cost;
-        this.price = cost * weight / COST_PER_X_WEIGHT;
+        this.price = cost * (weight / COST_PER_X_WEIGHT);
     }
 }

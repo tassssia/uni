@@ -5,9 +5,9 @@ import java.security.SecureRandom;
 
 public class CoffeeVan {
     SecureRandom random = new SecureRandom();
-    private ArrayList<Coffee> cargo;
-    private int capacity;
-    private int loaded;
+    protected ArrayList<Coffee> cargo;
+    protected int capacity;
+    protected int loaded;
     private double cash;
     private double tips;
 
@@ -17,10 +17,9 @@ public class CoffeeVan {
         loaded = 0;
         cash = 0;
         tips = 0;
-        load(capacity-10);
     }
 
-    private void load(int capToLoad) {
+    public void load(int capToLoad) {
         boolean flag = true;
         while (loaded < capToLoad && flag) {
             int type = random.nextInt(3);
@@ -40,6 +39,15 @@ public class CoffeeVan {
                     break;
             }
         }
+    }
+    public boolean load(ArrayList<Coffee> toLoad) {
+        for (Coffee coffeeToLoad : toLoad) {
+            if(!addCoffeeItem(coffeeToLoad)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public ArrayList<Coffee> findByParameters(String type, double minCost, double maxCost, int minVol, int maxVol) {
