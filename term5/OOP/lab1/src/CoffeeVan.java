@@ -5,9 +5,9 @@ import java.security.SecureRandom;
 
 public class CoffeeVan {
     SecureRandom random = new SecureRandom();
-    protected ArrayList<Coffee> cargo;
-    protected int capacity;
-    protected int loaded;
+    private ArrayList<Coffee> cargo;
+    private int capacity;
+    private int loaded;
     private double cash;
     private double tips;
 
@@ -113,5 +113,15 @@ public class CoffeeVan {
     }
     public double getTips() {
         return Math.round(tips * 100.0) / 100.0;
+    }
+
+    protected ArrayList<Coffee> getCargo() {
+        return cargo;
+    }
+    protected int getCapacity() {
+        return capacity;
+    }
+    protected int getLoaded() {
+        return loaded;
     }
 }
