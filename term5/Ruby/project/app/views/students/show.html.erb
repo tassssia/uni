@@ -1,0 +1,40 @@
+<table>
+  <thead>
+  <tr>
+    <th>Parameter</th>
+    <th>Info</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>Name</td>
+    <td><%= @student.first_name + " " + @student.middle_name + " " + @student.last_name %></td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td><%= @student.age.to_s %></td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td><%= @student.gender %></td>
+  </tr>
+  <tr>
+    <td>Course</td>
+    <td><%= @student.course.to_s %></td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td><%= @student.status %></td>
+  </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><%= link_to "Edit", edit_student_path(@student) %></li>
+  <li><%= link_to "Destroy", student_path(@student), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>
+
+<%= link_to "Main Page", root_path %>

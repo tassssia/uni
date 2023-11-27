@@ -1,0 +1,15 @@
+<h1>Students</h1>
+
+Currently, <%= Student.enrolled_count %> students are enrolled
+
+<ul>
+  <% @students.each do |student| %>
+    <% unless student.academ_leave? %>
+      <li>
+        <%= link_to student.format_short, student %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to "Add Student", new_student_path %>

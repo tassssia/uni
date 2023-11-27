@@ -1,0 +1,58 @@
+<%= form_with model: @student do |form| %>
+  <div>
+    <%= form.label :first_name %><br>
+    <%= form.text_field :first_name %>
+    <% @student.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :middle_name %><br>
+    <%= form.text_field :middle_name %>
+    <% @student.errors.full_messages_for(:middle_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %>
+    <% @student.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :gender %><br>
+    <%= form.text_field :gender %>
+    <% @student.errors.full_messages_for(:gender).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :age %><br>
+    <%= form.number_field :age, min: 0, step: 1 %>
+    <% @student.errors.full_messages_for(:age).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :course %><br>
+    <%= form.number_field :course, min: 1, max: 10, step: 1 %>
+    <% @student.errors.full_messages_for(:course).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: student.status || 'enrolled' %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
