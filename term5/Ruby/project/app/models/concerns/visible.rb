@@ -11,6 +11,10 @@ module Visible
     def enrolled_count
       where(status: 'enrolled').count
     end
+
+    def academ_leave_count
+      where(status: 'on academic leave').count
+    end
   end
 
   def academ_leave?

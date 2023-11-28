@@ -1,6 +1,9 @@
 <h1>Students</h1>
 
-Currently, <%= Student.enrolled_count %> students are enrolled
+<%= link_to "Add Student", new_student_path %>
+<%= link_to "Queires", queries_path %>
+
+<br><br>Currently, <%= Student.enrolled_count %> students are enrolled
 
 <ul>
   <% @students.each do |student| %>
@@ -12,4 +15,14 @@ Currently, <%= Student.enrolled_count %> students are enrolled
   <% end %>
 </ul>
 
-<%= link_to "Add Student", new_student_path %>
+<br>Currently, <%= Student.academ_leave_count %> students are on academic leave
+
+<ul>
+  <% @students.each do |student| %>
+    <% if student.academ_leave? %>
+      <li>
+        <%= link_to student.format_short, student %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
