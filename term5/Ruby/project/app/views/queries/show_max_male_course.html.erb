@@ -1,5 +1,7 @@
-<h1>Course with maximum percentage of male students is <%= @max_male_course %></h1>
+<div class="container">
+  <h1>Course with maximum percentage of male students is <%= @max_male_course %></h1>
 
-<%= render "table", students_list: @students_of_course %>
+  <%= render "table", students_list: @students_of_course %>
 
-<br><%= link_to "Go Back", queries_path %>
+  <br><%= link_to "Go Back", queries_path, class: "button" %>
+</div>

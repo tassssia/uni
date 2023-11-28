@@ -1,5 +1,7 @@
-<h1>Edit Student Info</h1>
+<div class="container">
+  <h1 class="page-heading">Edit Student Info</h1>
 
-<%= render "form", student: @student %>
+  <%= render "form", student: @student %>
 
-<%= link_to "Go Back", student_path(@student) %>
+  <%= link_to "Go Back", student_path(@student), class: "button" %>
+</div>

@@ -1,28 +1,30 @@
-<h1>Students</h1>
+<div class="container">
+  <h1>Students</h1>
 
-<%= link_to "Add Student", new_student_path %>
-<%= link_to "Queires", queries_path %>
+  <%= link_to "Add Student", new_student_path, class: "button" %>
+  <%= link_to "Queries", queries_path, class: "button" %>
 
-<br><br>Currently, <%= Student.enrolled_count %> students are enrolled
+  <br><br>Currently, <span class="enrolled-count"><%= Student.enrolled_count %></span> students are enrolled
 
-<ul>
-  <% @students.each do |student| %>
-    <% unless student.academ_leave? %>
-      <li>
-        <%= link_to student.format_short, student %>
-      </li>
+  <ul>
+    <% @students.each do |student| %>
+      <% unless student.academ_leave? %>
+        <li>
+          <%= link_to student.format_short, student %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 
-<br>Currently, <%= Student.academ_leave_count %> students are on academic leave
+  <br>Currently, <span class="leave-count"><%= Student.academ_leave_count %></span> students are on academic leave
 
-<ul>
-  <% @students.each do |student| %>
-    <% if student.academ_leave? %>
-      <li>
-        <%= link_to student.format_short, student %>
-      </li>
+  <ul>
+    <% @students.each do |student| %>
+      <% if student.academ_leave? %>
+        <li>
+          <%= link_to student.format_short, student %>
+        </li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
+</div>

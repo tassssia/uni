@@ -1,22 +1,24 @@
-<table>
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Gender</th>
-    <th>Age</th>
-    <th>Course</th>
-    <th>Status</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% students_list.each do |student| %>
+<div class="container">
+  <table class="styled-table">
+    <thead>
     <tr>
-      <td><%= "#{student.first_name} #{student.middle_name} #{student.last_name}" %></td>
-      <td><%= student.gender %></td>
-      <td><%= student.age.to_s %></td>
-      <td><%= student.course.to_s %></td>
-      <td><%= student.status %></td>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Age</th>
+      <th>Course</th>
+      <th>Status</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% students_list.each do |student| %>
+      <tr>
+        <td><%= "#{student.first_name} #{student.middle_name} #{student.last_name}" %></td>
+        <td><%= student.gender %></td>
+        <td><%= student.age.to_s %></td>
+        <td><%= student.course.to_s %></td>
+        <td><%= student.status %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
