@@ -6,9 +6,9 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import prototype.KnifeAttributes;
 import prototype.Visual;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class KnifeHandler extends DefaultHandler {
     private List<Knife> knives = new ArrayList<>();
@@ -70,7 +70,7 @@ public class KnifeHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) throws SAXException {
         attrValue = new String(ch, start, length);
     }
-    public void setField(String attrName, String attrValue) {
+    public void setField(String attrName, String attrValue,  Map<String, String> attrMap) {
         switch(attrName) {
             case KnifeAttributes.KNIFE:
                 Knife knife = new Knife();
