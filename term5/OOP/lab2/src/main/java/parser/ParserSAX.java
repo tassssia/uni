@@ -14,9 +14,9 @@ public class ParserSAX {
         SAXParserFactory saxFactory = SAXParserFactory.newInstance();
         SAXParser saxParser = saxFactory.newSAXParser();
 
-        Handler handler = new Handler();
-        saxParser.parse(xml, handler);
+        KnifeHandler knifeHandler = new KnifeHandler();
+        saxParser.parse(xml, knifeHandler);
 
-        return handler.getKnives();
+        return knifeHandler.getKnives();
     }
 }
