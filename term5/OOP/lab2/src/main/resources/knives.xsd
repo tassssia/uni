@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="KnifeStore">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Knife"  maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:string"/>
+                            <xs:element name="type" type="xs:string"/>
+                            <xs:element name="handy">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:enumeration value="1"/>
+                                        <xs:enumeration value="2"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="origin" type="xs:string"/>
+                            <xs:element name="visual">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="bladeLengthCm">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="1"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="bladeWidthMm">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="1"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="material" type="xs:string"/>
+                                        <xs:element name="handle" type="xs:string"/>
+                                        <xs:element name="bloodGroove" type="xs:boolean"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="value" type="xs:boolean"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
