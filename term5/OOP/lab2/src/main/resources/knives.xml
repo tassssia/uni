@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KnifeStore>
+    <Knife>
+        <id>1111</id>
+        <type>Knife</type>
+        <handy>1</handy>
+        <origin>Japan</origin>
+
+        <visual>
+            <bladeLengthCm>15</bladeLengthCm>
+            <bladeWidthMm>20</bladeWidthMm>
+            <material>Steel</material>
+            <handle>Japanese redwood</handle>
+            <bloodGroove>false</bloodGroove>
+        </visual>
+
+        <value>true</value>
+    </Knife>
+
+    <Knife>
+        <id>2222</id>
+        <type>Saber</type>
+        <handy>2</handy>
+        <origin>Spain</origin>
+
+        <visual>
+            <bladeLengthCm>30</bladeLengthCm>
+            <bladeWidthMm>25</bladeWidthMm>
+            <material>Steel</material>
+            <handle>Metal</handle>
+            <bloodGroove>true</bloodGroove>
+        </visual>
+
+        <value>false</value>
+    </Knife>
+
+    <Knife>
+        <id>3333</id>
+        <type>Dagger</type>
+        <handy>1</handy>
+        <origin>India</origin>
+
+        <visual>
+            <bladeLengthCm>18</bladeLengthCm>
+            <bladeWidthMm>15</bladeWidthMm>
+            <material>Steel</material>
+            <handle>Multicolored plastic</handle>
+            <bloodGroove>false</bloodGroove>
+        </visual>
+
+        <value>true</value>
+    </Knife>
+
+    <Knife>
+        <id>4444</id>
+        <type>Machete</type>
+        <handy>1</handy>
+        <origin>Colombia</origin>
+
+        <visual>
+            <bladeLengthCm>40</bladeLengthCm>
+            <bladeWidthMm>50</bladeWidthMm>
+            <material>Steel</material>
+            <handle>Rubber</handle>
+            <bloodGroove>true</bloodGroove>
+        </visual>
+
+        <value>false</value>
+    </Knife>
+
+
+</KnifeStore>
