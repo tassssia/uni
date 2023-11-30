@@ -6,7 +6,7 @@ y = 10
 z = -5
 
 expr_a = !(a || b) && (a && !b)
-expr_b = (z != y).object_id <= (6 >= y).object_id && a || b && c && x >= 1.5 # "<=" with boolean values was defined as inversion (!a || b)
+expr_b = (z != y).object_id <= (6 >= y).object_id && a || b && c && x >= 1.5
 expr_c = (8-2*x <= z) && (x**2 >= y**2) || (z >= 1.5)
 expr_d = x>0 && y<0 || z >= (x*y-(-y/x)) + (-z)/2
 expr_e = !(a || b && !(c || (!a || b)))
