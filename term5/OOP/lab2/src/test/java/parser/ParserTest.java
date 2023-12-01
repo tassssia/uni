@@ -33,7 +33,7 @@ public class ParserTest {
         Knife curr;
         for (int i = 0; i < num; i++) {
             curr = knives.get(i);
-            
+
             assertEquals(curr.getId(), ID[i]);
             assertEquals(curr.getType(), TYPE[i]);
             assertEquals(curr.getHandy(), HANDY[i]);
