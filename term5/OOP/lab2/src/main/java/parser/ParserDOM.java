@@ -1,5 +1,6 @@
 package parser;
 
+import org.xml.sax.SAXException;
 import prototype.Knife;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,7 +14,11 @@ import java.util.List;
 import java.util.Map;
 
 public class ParserDOM {
-    public List<Knife> parseDOM(File xml) {
+    public List<Knife> parseDOM(File xml) throws SAXException {
+        if (!ValidatorOfXML.isValid("src/main/resources/knives.xml", "src/main/resources/knives.xsd")) {
+            throw new SAXException("XML does not conform to the XSD");
+        }
+
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();

@@ -1,5 +1,6 @@
 package parser;
 
+import org.xml.sax.SAXException;
 import prototype.Knife;
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -13,7 +14,11 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class ParserStAX {
-    public List<Knife> parseStAX(File xml) throws XMLStreamException, FileNotFoundException {
+    public List<Knife> parseStAX(File xml) throws XMLStreamException, FileNotFoundException, SAXException {
+        if (!ValidatorOfXML.isValid("src/main/resources/knives.xml", "src/main/resources/knives.xsd")) {
+            throw new SAXException("XML does not conform to the XSD");
+        }
+
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         XMLEventReader reader;
 

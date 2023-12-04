@@ -11,6 +11,10 @@ import java.util.List;
 
 public class ParserSAX {
     public List<Knife> parseSAX(File xml) throws SAXException, IOException, ParserConfigurationException {
+        if (!ValidatorOfXML.isValid("src/main/resources/knives.xml", "src/main/resources/knives.xsd")) {
+            throw new SAXException("XML does not conform to the XSD");
+        }
+
         SAXParserFactory saxFactory = SAXParserFactory.newInstance();
         SAXParser saxParser = saxFactory.newSAXParser();
 

@@ -56,7 +56,7 @@ public class ParserTest {
     }
 
     @Test
-    void parseDOM() throws NullPointerException {
+    void parseDOM() throws NullPointerException, SAXException {
         ParserDOM parser = new ParserDOM();
         List<Knife> knives = parser.parseDOM(xmlFile);
 
@@ -64,7 +64,7 @@ public class ParserTest {
     }
 
     @Test
-    void parseStAX() throws NullPointerException, FileNotFoundException, XMLStreamException {
+    void parseStAX() throws NullPointerException, FileNotFoundException, XMLStreamException, SAXException {
         ParserStAX parser = new ParserStAX();
         List<Knife> knives = parser.parseStAX(xmlFile);
 
