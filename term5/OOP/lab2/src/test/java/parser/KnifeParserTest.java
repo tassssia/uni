@@ -6,14 +6,13 @@ import prototype.Knife;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLStreamException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 
-public class ParserTest {
+public class KnifeParserTest {
     private final String[] ID = {"1111", "2222", "3333", "4444"};
     private final String[] TYPE = {"Knife", "Saber", "Dagger", "Machete"};
     private final Integer[] HANDY = {1, 2, 1, 1};
@@ -48,25 +47,25 @@ public class ParserTest {
     }
 
     @Test
-    void parseSAX() throws IOException, SAXException, ParserConfigurationException {
-        ParserSAX parser = new ParserSAX();
-        List<Knife> knives = parser.parseSAX(xmlFile);
+    void parseSAX() throws IOException, SAXException, ParserConfigurationException, XMLStreamException {
+        KnifeParser parser = new ParserSAX();
+        List<Knife> knives = parser.parse(xmlFile);
 
         check(knives);
     }
 
     @Test
-    void parseDOM() throws NullPointerException, SAXException {
-        ParserDOM parser = new ParserDOM();
-        List<Knife> knives = parser.parseDOM(xmlFile);
+    void parseDOM() throws NullPointerException, SAXException, XMLStreamException, ParserConfigurationException, IOException {
+        KnifeParser parser = new ParserDOM();
+        List<Knife> knives = parser.parse(xmlFile);
 
         check(knives);
     }
 
     @Test
-    void parseStAX() throws NullPointerException, FileNotFoundException, XMLStreamException, SAXException {
-        ParserStAX parser = new ParserStAX();
-        List<Knife> knives = parser.parseStAX(xmlFile);
+    void parseStAX() throws NullPointerException, IOException, XMLStreamException, SAXException, ParserConfigurationException {
+        KnifeParser parser = new ParserStAX();
+        List<Knife> knives = parser.parse(xmlFile);
 
         check(knives);
     }

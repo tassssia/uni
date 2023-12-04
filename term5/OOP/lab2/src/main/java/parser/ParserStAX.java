@@ -13,8 +13,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class ParserStAX {
-    public List<Knife> parseStAX(File xml) throws XMLStreamException, FileNotFoundException, SAXException {
+public class ParserStAX implements KnifeParser {
+    @Override
+    public List<Knife> parse(File xml) throws SAXException, XMLStreamException, FileNotFoundException {
         if (!ValidatorOfXML.isValid("src/main/resources/knives.xml", "src/main/resources/knives.xsd")) {
             throw new SAXException("XML does not conform to the XSD");
         }

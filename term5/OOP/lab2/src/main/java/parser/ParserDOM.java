@@ -8,13 +8,16 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.stream.XMLStreamException;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ParserDOM {
-    public List<Knife> parseDOM(File xml) throws SAXException {
+public class ParserDOM implements KnifeParser {
+    @Override
+    public List<Knife> parse(File xml) throws SAXException {
         if (!ValidatorOfXML.isValid("src/main/resources/knives.xml", "src/main/resources/knives.xsd")) {
             throw new SAXException("XML does not conform to the XSD");
         }
