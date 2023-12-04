@@ -39,6 +39,18 @@ class MailBox
     @black_list = []
   end
 
+  def send(email)
+    @emails << Sent.new(email.header, email.recipient, email.date, email.tags)
+  end
+
+  def receive(email, folder = nil)
+    if black_list.include?(sender)
+      @emails << Spam.new(email.header, email.sender, email.date, email.tags)
+    else
+      @emails << Received.new(email.header, email.sender, email.date, email.tags, folder)
+    end
+  end
+
   def sort_by_date(order = :asc)
     sorted_emails = emails.sort_by { |email| email.date }
     sorted_emails.reverse! if order == :desc
