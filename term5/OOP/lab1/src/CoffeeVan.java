@@ -1,11 +1,12 @@
 import coffee.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.security.SecureRandom;
 
 public class CoffeeVan {
     SecureRandom random = new SecureRandom();
-    private ArrayList<Coffee> cargo;
+    private List<Coffee> cargo;
     private int capacity;
     private int loaded;
     private double cash;
@@ -40,7 +41,7 @@ public class CoffeeVan {
             }
         }
     }
-    public boolean load(ArrayList<Coffee> toLoad) {
+    public boolean load(List<Coffee> toLoad) {
         for (Coffee coffeeToLoad : toLoad) {
             if(!addCoffeeItem(coffeeToLoad)) {
                 return false;
@@ -50,8 +51,8 @@ public class CoffeeVan {
         return true;
     }
 
-    public ArrayList<Coffee> findByParameters(String type, double minCost, double maxCost, int minVol, int maxVol) {
-        ArrayList<Coffee> res = new ArrayList<>();
+    public List<Coffee> findByParameters(String type, double minCost, double maxCost, int minVol, int maxVol) {
+        List<Coffee> res = new ArrayList<>();
         type = type.toLowerCase();
 
         int len = cargo.size();
@@ -92,7 +93,7 @@ public class CoffeeVan {
             loaded += toAdd.getVolume();
             return true;
         } else {
-            System.out.println("Ooops, there is not enough space in the van");
+
             return false;
         }
     }
@@ -100,6 +101,9 @@ public class CoffeeVan {
     public void sell(Coffee toSell) {
         toSell.prepareForSelling();
 
+        if (!toSell.isReadyForSelling()) {
+            return;
+        }
         cargo.remove(toSell);
         loaded -= toSell.getVolume();
 
@@ -115,7 +119,7 @@ public class CoffeeVan {
         return Math.round(tips * 100.0) / 100.0;
     }
 
-    protected ArrayList<Coffee> getCargo() {
+    protected List<Coffee> getCargo() {
         return cargo;
     }
     protected int getCapacity() {

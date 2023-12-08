@@ -6,6 +6,7 @@ import coffee.GroundCoffee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CoffeeVanTest {
     private CoffeeVan coffeeVan;
@@ -35,7 +36,7 @@ public class CoffeeVanTest {
     public void testFindByParameters() {
         coffeeVan.load(500);
 
-        ArrayList<Coffee> foundCoffee = coffeeVan.findByParameters("coffeebeans", 15, 25, 4, 6);
+        List<Coffee> foundCoffee = coffeeVan.findByParameters("coffeebeans", 15, 25, 4, 6);
         for (Coffee coffee : foundCoffee) {
             assertTrue(coffee instanceof CoffeeBeans);
             assertTrue(coffee.getCost() >= 15 && coffee.getCost() <= 25);

@@ -6,10 +6,12 @@ public class InstantCoffee extends Coffee {
     }
 
     private void addBoilingWater() {
-        System.out.println("Mixing instant coffee of size " + volume + "...");
+        readyForSelling = true;
+        //System.out.println("Mixing instant coffee of size " + volume + "...");
     }
     private void pack() {
-        System.out.println("Packing a jar of instant coffee of weight " + weight + "...");
+        readyForSelling = true;
+        //System.out.println("Packing a jar of instant coffee of weight " + weight + "...");
     }
 
     @Override

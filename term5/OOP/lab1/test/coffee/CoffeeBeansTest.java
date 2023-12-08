@@ -22,10 +22,11 @@ public class CoffeeBeansTest {
     @Test
     public void testPrepareForSelling() {
         CoffeeBeans coffeeBeans = new CoffeeBeans(5.0, 4);
-        String expectedOutput = "Packing a jar of coffee beans of weight " + coffeeBeans.getWeight() + "...";
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
+//        String expectedOutput = "Packing a jar of coffee beans of weight " + coffeeBeans.getWeight() + "...";
+//        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+//        System.setOut(new PrintStream(outContent));
         coffeeBeans.prepareForSelling();
-        assertEquals(expectedOutput, outContent.toString().trim());
+//        assertEquals(expectedOutput, outContent.toString().trim());
+        assertTrue(coffeeBeans.isReadyForSelling());
     }
 }

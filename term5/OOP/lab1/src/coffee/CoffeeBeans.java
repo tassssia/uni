@@ -10,6 +10,7 @@ public class CoffeeBeans extends Coffee {
 
     @Override
     public void prepareForSelling() {
-        System.out.println("Packing a jar of coffee beans of weight " + weight + "...");
+        readyForSelling = true;
+        //System.out.println("Packing a jar of coffee beans of weight " + weight + "...");
     }
 }

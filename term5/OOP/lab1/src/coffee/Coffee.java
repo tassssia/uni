@@ -7,10 +7,12 @@ public abstract class Coffee {
     protected double cost;
     protected double weight;
     protected int volume;
+    protected boolean readyForSelling;
 
     protected Coffee(double cost, int volume) {
         setVolume(volume);
         setCost(cost);
+        readyForSelling = false;
     }
 
 
@@ -39,5 +41,9 @@ public abstract class Coffee {
     public void setCost(double cost) {
         this.cost = cost;
         this.price = cost * (weight / COST_PER_X_WEIGHT);
+    }
+
+    public boolean isReadyForSelling() {
+        return readyForSelling;
     }
 }

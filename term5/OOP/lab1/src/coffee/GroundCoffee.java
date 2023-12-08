@@ -12,12 +12,13 @@ public class GroundCoffee extends Coffee {
 
     @Override
     public void prepareForSelling() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Which brewing do you prefer: espresso, filter, or Turkish? [e/f/t] ");
-        String brewingType = scanner.nextLine().toLowerCase();
-        scanner.close();
-
-        brew(brewingType);
+        readyForSelling = true;
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Which brewing do you prefer: espresso, filter, or Turkish? [e/f/t] ");
+//        String brewingType = scanner.nextLine().toLowerCase();
+//        scanner.close();
+//
+//        brew(brewingType);
     }
 
     private void brew(String type) {

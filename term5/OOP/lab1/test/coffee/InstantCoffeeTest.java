@@ -11,35 +11,25 @@ public class InstantCoffeeTest {
     public void testPrepareForSellingWithVolumeLessThan4() {
         InstantCoffee instantCoffee = new InstantCoffee(5.0, 3);
 
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
+//        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+//        System.setOut(new PrintStream(outContent));
         instantCoffee.prepareForSelling();
 
-        String expectedOutput = "Mixing instant coffee of size 3...";
-        assertEquals(expectedOutput, outContent.toString().trim());
+//        String expectedOutput = "Mixing instant coffee of size 3...";
+//        assertEquals(expectedOutput, outContent.toString().trim());
+        assertTrue(instantCoffee.isReadyForSelling());
     }
 
     @Test
     public void testPrepareForSellingWithVolumeGreaterOrEqualTo4() {
         InstantCoffee instantCoffee = new InstantCoffee(5.0, 4);
 
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
+//        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+//        System.setOut(new PrintStream(outContent));
         instantCoffee.prepareForSelling();
 
-        String expectedOutput = "Packing a jar of instant coffee of weight " + instantCoffee.getWeight() + "...";
-        assertEquals(expectedOutput, outContent.toString().trim());
-    }
-
-    @Test
-    public void testPrepareForSellingWithVolumeEqualTo4() {
-        InstantCoffee instantCoffee = new InstantCoffee(5.0, 4);
-
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-        instantCoffee.prepareForSelling();
-
-        String expectedOutput = "Packing a jar of instant coffee of weight " + instantCoffee.getWeight() + "...";
-        assertEquals(expectedOutput, outContent.toString().trim());
+//        String expectedOutput = "Packing a jar of instant coffee of weight " + instantCoffee.getWeight() + "...";
+//        assertEquals(expectedOutput, outContent.toString().trim());
+        assertTrue(instantCoffee.isReadyForSelling());
     }
 }
