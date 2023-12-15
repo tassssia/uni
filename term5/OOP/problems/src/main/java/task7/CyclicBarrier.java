@@ -11,12 +11,10 @@ public class CyclicBarrier {
     public synchronized void await() throws InterruptedException {
         count++;
 
-        if (count < parties) {
+        while (count < parties) {
             wait();
-        } else {
-            notifyAll();
-            count = 0;
         }
+        reset();
     }
 
     public synchronized void reset() {
