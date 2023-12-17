@@ -2,11 +2,11 @@ package database;
 
 import java.sql.*;
 
-public class Software {
+public class SoftwareDB {
     private final Connection con;
     private final Statement stmt;
 
-    public Software(String DBName, String ip, int port) throws Exception {
+    public SoftwareDB(String DBName, String ip, int port) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
         String url = "jdbc:mysql://" + ip + ":" + port + "/" + DBName;
         con = DriverManager.getConnection(url, "root", "40020182Tp$$");
@@ -143,7 +143,7 @@ public class Software {
     }
 
     public static void main(String[] args) throws Exception {
-        Software s = new Software("software", "localhost", 3306);
+        SoftwareDB s = new SoftwareDB("software", "localhost", 3306);
 
         s.printDevelopers();
 
