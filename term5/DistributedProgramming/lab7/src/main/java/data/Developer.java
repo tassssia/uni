@@ -3,7 +3,7 @@ package data;
 public class Developer {
     private final int id;
     private String name;
-    private String founder;
+    private final String founder;
     private final int year; // year founded
 
     public Developer(int id, String name, String founder, int year) {
