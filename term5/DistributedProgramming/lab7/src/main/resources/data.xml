@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="WINDOWS-1251"?>
+
+<Software>
+    <Developer id="1" name="TechSoft" founder="John Doe" year="1995">
+        <SoftwareProduct id="1" name="WordProcessor" cost="50"/>
+        <SoftwareProduct id="2" name="DatabaseManager" cost="80"/>
+        <SoftwareProduct id="3" name="SecuritySuite" cost="120"/>
+    </Developer>
+    <Developer id="2" name="MediaStudios" founder="Jane Smith" year="2005">
+        <SoftwareProduct id="4" name="PhotoEditor" cost="75"/>
+        <SoftwareProduct id="5" name="VideoPlayer" cost="90"/>
+    </Developer>
+</Software>
