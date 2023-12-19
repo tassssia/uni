@@ -99,7 +99,7 @@ public class SoftwareDB {
     }
     public void addProduct(int id, String name, int cost, int developer) {
 
-        String sql = "INSERT INTO SOFTWARE_PRODUCTS (ID_PR, ID_DEV, NAME, PRICE) " +
+        String sql = "INSERT INTO SOFTWARE_PRODUCTS (ID_PR, ID_DEV, NAME, COST) " +
                 "VALUES (" + id + ", " + developer + ", '" + name + "', " + cost + ")";
         try {
             stmt.executeUpdate(sql);

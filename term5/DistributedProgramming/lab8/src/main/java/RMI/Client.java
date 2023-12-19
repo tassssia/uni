@@ -23,7 +23,7 @@ public class Client {
         }
         return result.toString();
     }
-    public static String showProductInSection(String id) throws IOException {
+    public static String getAllProductsOfDeveloper(String id) throws IOException {
         StringBuilder result = new StringBuilder();
         result.append("ALL PRODUCTS OF DEVELOPER " + id + ":\n");
 
@@ -75,6 +75,21 @@ public class Client {
         server = (SoftwareServer) Naming.lookup(url);
 
         System.out.println("Connected to the server.");
+
+        System.out.println(getAllDevelopers());
+        System.out.println(getAllProductsOfDeveloper("1"));
+        System.out.println(countAllProductsOfDeveloper("1"));
+
+        addProduct("6", "name", "66", "1");
+        System.out.println(getAllProductsOfDeveloper("1"));
+        updateProduct("6", "another name", "666");
+        System.out.println(getAllProductsOfDeveloper("1"));
+        deleteProduct("6");
+        System.out.println(getAllProductsOfDeveloper("1"));
+
+        addDeveloper("6","test","test", "1111");
+        System.out.println(getAllDevelopers());
+        deleteDeveloper("6");
         System.out.println(getAllDevelopers());
     }
 }

@@ -51,25 +51,25 @@ public class Services {
     public String countAllProductsOfDeveloper(int id) {
         int count = db.countAllProductsOfDeveloper(id);
 
-        result.append("DEVELOPER " + String.valueOf(id) + " HAS " + String.valueOf(count) + " PRODUCTS#");
+        result.append("DEVELOPER " + id + " HAS " + count + " PRODUCTS#");
         return result.toString();
     }
 
     public String addDeveloper(int id, String name, String founder, int year) {
         try {
             db.addDeveloper(id, name, founder, year);
-            result.append("Developer " + String.valueOf(id) + " successfully added#");
+            result.append("Developer " + id + " successfully added#");
         } catch (Exception e) {
-            result.append("Failed to add developer " + String.valueOf(id) + "#");
+            result.append("Failed to add developer " + id + "#");
         }
         return result.toString();
     }
     public String addProduct(int id, String name, int cost, int developer) {
         try {
             db.addProduct(id, name, cost, developer);
-            result.append("Software product " + String.valueOf(id) + " successfully added#");
+            result.append("Software product " + id + " successfully added#");
         } catch (Exception e) {
-            result.append("Failed to add product " + String.valueOf(id) + "#");
+            result.append("Failed to add product " + id + "#");
         }
         return result.toString();
     }
@@ -77,18 +77,18 @@ public class Services {
     public String updateDeveloper(int id, String name) {
         try {
             db.updateDeveloper(id, name);
-            result.append("Developer " + String.valueOf(id) + " successfully updated#");
+            result.append("Developer " + id + " successfully updated#");
         } catch (Exception e) {
-            result.append("Failed to update developer " + String.valueOf(id) + "#");
+            result.append("Failed to update developer " + id + "#");
         }
         return result.toString();
     }
     public String updateProduct(int id, String name, int cost) {
         try {
             db.updateProduct(id, name, cost);
-            result.append("Software product " + String.valueOf(id) + " successfully updated#");
+            result.append("Software product " + id + " successfully updated#");
         } catch (Exception e) {
-            result.append("Failed to update product " + String.valueOf(id) + "#");
+            result.append("Failed to update product " + id + "#");
         }
         return result.toString();
     }
@@ -96,18 +96,18 @@ public class Services {
     public String deleteDeveloper(int id) {
         try {
             db.deleteDeveloper(id);
-            result.append("Developer " + String.valueOf(id) + " successfully deleted#");
+            result.append("Developer " + id + " successfully deleted#");
         } catch (Exception e) {
-            result.append("Failed to delete developer " + String.valueOf(id) + "#");
+            result.append("Failed to delete developer " + id + "#");
         }
         return result.toString();
     }
     public String deleteProduct(int id) {
         try {
             db.deleteProduct(id);
-            result.append("Software product " + String.valueOf(id) + " successfully deleted#");
+            result.append("Software product " + id + " successfully deleted#");
         } catch (Exception e) {
-            result.append("Failed to delete product " + String.valueOf(id) + "#");
+            result.append("Failed to delete product " + id + "#");
         }
         return result.toString();
     }

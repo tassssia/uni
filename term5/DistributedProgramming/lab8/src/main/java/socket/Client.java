@@ -80,21 +80,40 @@ public class Client {
         try {
             Client client = new Client("localhost", 12345);
 
-//            getAllDevelopers();
-//            readResponse();
-//
-//            getAllDevelopers();
-//            readResponse();
-//
-//            addProduct("6","test","44", "2");
-//            readResponse();
-//            getAllProductsOfDeveloper("2");
-//            readResponse();
-//
-//            deleteProduct("6");
-//            readResponse();
-//            getAllProductsOfDeveloper("2");
-//            readResponse();
+            getAllDevelopers();
+            readResponse();
+
+            getAllProductsOfDeveloper("1");
+            readResponse();
+
+            countAllProductsOfDeveloper("1");
+            readResponse();
+
+            addProduct("6", "name", "66", "1");
+            readResponse();
+            getAllProductsOfDeveloper("1");
+            readResponse();
+
+            updateProduct("6", "another name", "666");
+            readResponse();
+            getAllProductsOfDeveloper("1");
+            readResponse();
+
+            deleteProduct("6");
+            readResponse();
+
+            getAllProductsOfDeveloper("1");
+            readResponse();
+
+            addDeveloper("6","test","test", "1111");
+            readResponse();
+            getAllDevelopers();
+            readResponse();
+
+            deleteDeveloper("6");
+            readResponse();
+            getAllDevelopers();
+            readResponse();
 
             stop();
             client.disconnect();

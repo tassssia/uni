@@ -37,6 +37,6 @@ public class SoftwareProduct implements Serializable {
 
     @Override
     public String toString() {
-        return " >> " + id + " - " + name + " - " + cost + " - " + developer + "\n";
+        return " >> " + id + " - " + name + " - " + cost + " - " + developer;
     }
 }
