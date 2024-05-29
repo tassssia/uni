@@ -1,0 +1,29 @@
+button {
+    background-color: #219c58;
+    border: none;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover state */
+button:hover {
+    background-color: #2aad64;
+}
+
+/* Active state */
+button:active {
+    background-color: #1d884d;
+}
+
+.main-container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
